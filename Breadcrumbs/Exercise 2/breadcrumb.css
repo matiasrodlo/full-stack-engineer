@@ -1,10 +1,15 @@
+.breadcrumb {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .breadcrumb li {
   display: inline;
 }
 
 .breadcrumb a:hover {
   display: inline;
-  color: red;
+  color: green;
 }
 
 .breadcrumb li.location+li.location:before {
