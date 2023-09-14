@@ -1,0 +1,152 @@
+* {
+background-color:black;
+font-family: Helvetica;
+font-size: 22px;
+opacity: 0.9;
+
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+li {
+  float: right;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: underline;
+
+}
+
+#logo {
+  height: 50px;
+}
+
+.container-1 {
+  display: fixed;
+  height: 69px;
+  padding: 10px 9px;
+  border-bottom: 1px solid seashell;
+}
+
+.container-2 {
+  position: relative;
+  text-align: center;
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  padding: 10px;
+}
+
+h1 {
+  font-size: 39px;
+}
+
+h4 {
+  font-size: 20px;
+}
+
+.container-3 {
+  float: center;
+  color: white;
+}
+
+.box-container {
+  width: 1300px;
+  display: flex;
+  font-size: 30px;
+  text-align: center;
+  color:white;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-left: 260px;
+}
+
+.box-1 {
+  padding: 30px;
+  height: 200px; 
+  width: 300px;
+}
+
+.box-2 {
+  background-color: black;
+  padding: 30px;
+  height: 200px; 
+  width: 300px;
+}
+.box-3 {
+  background-color: black;
+  padding: 30px;
+  height: 200px; 
+  width: 300px;
+}
+
+.box-4 {
+  background-color: black;
+  padding: 30px;
+  height: 200px; 
+  width: 300px;
+}
+
+.box-5 {
+  background-color: black;
+  padding: 30px;
+  height: 200px; 
+  width: 300px;
+}
+
+.box-6 {
+  background-color: black;
+  padding: 30px;
+  height: 200px; 
+  width: 300px;
+}
+
+.container-4 {
+  position: relative;
+  text-align: center;
+}
+
+.rectangue-1 {
+  position: absolute;
+  top: 50%;
+  left: 70%;
+  transform: translate(-50%, -50%);
+  color: white;
+  padding: 10px;
+}
+
+.rectangue-2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  padding: 10px;
+}
+
+.rectangue-3 {
+  position: absolute;
+  top: 50%;
+  left: 30%;
+  transform: translate(-50%, -50%);
+  color: white;
+  padding: 10px;
+}
+
+footer {
+  height: 200px;
+}
