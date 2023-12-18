@@ -18,8 +18,6 @@ html {
   border-radius: 4px;
   background-color: #4a4a4a;
   color: white;
-  line-height: 1.4;
-  font-family: "Roboto";
 }
 
 .image-container {
@@ -28,9 +26,10 @@ html {
 
 .image-container img {
   display: block;
+  max-width: 100%;
 }
 
-@media only screen and (max-width: 760px) {
+@media only screen and (max-width: 895px) {
   .main-content {
     top: 2.5625rem;
   }
@@ -40,6 +39,7 @@ html {
 
 header {
   position: fixed;
+  z-index: 100;
   width: 100%;
   border-bottom: solid 1px #c6c1c1;
   background-color: white;
@@ -48,16 +48,11 @@ header {
 header .content {
   display: flex;
   align-items: center;
-  height: 80px;
+  padding: 1.875rem;
 }
 
 header .logo {
   flex: 1;
-  color: #4a4a4a;
-  font-size: 24px;
-  font-family: "Roboto";
-  text-decoration: none;
-  padding-left: 30px;
 }
 
 header nav ul {
@@ -66,9 +61,6 @@ header nav ul {
 
 nav li {
   padding-left: 3.5rem;
-  list-style-type: none;
-  font-size: 16px;
-  line-height: 1.6;
 }
 
 nav a {
@@ -76,20 +68,39 @@ nav a {
   line-height: 1.6;
   font-size: 1rem;
   color: #4a4a4a;
-  text-decoration: none;
+}
+
+nav .button {
+  padding: .1875rem .5rem;
+  background-color: #9dc20b;
+  line-height: 1.6;
+  color: white;
+}
+
+nav li:last-child {
+  display: none;
 }
 
 header .icon {
   width: 1rem;
-  padding-left: 30px;
-  padding-right: 30px;
+  padding-left: .75rem;
 }
 
 header .mobile {
   display: none;
 }
 
-@media only screen and (max-width: 760px) {
+@media only screen and (max-width: 895px) {
+  nav li:last-child {
+    display: block;
+  }
+
+  header .content {
+    padding: 1rem 1rem;
+  }
+}
+
+@media only screen and (max-width: 600px) {
   header .desktop {
     display: none;
   }
@@ -100,7 +111,7 @@ header .mobile {
   }
 
   header .content {
-    padding: 0.5rem 0;
+    padding: .5rem 0;
   }
 
   header .mobile ul {
@@ -113,13 +124,6 @@ header .mobile {
   header .mobile li {
     padding: 0;
   }
-
-  header .mobile .button {
-    padding: 0.1875rem 0.5rem;
-    background-color: #9dc20b;
-    line-height: 1.6;
-    color: white;
-  }
 }
 
 /* Sign Up Section */
@@ -129,16 +133,16 @@ header .mobile {
   justify-content: flex-start;
   align-items: flex-start;
   height: 43.5rem;
-  background-image: url("/HTML-CSS/Proyects/Fotomatic/resources/images/banner-landingpage.jpg");
-  background-repeat: no-repeat;
-  background-position: center;
+  background-image: url('../images/banner-landingpage.jpg');
+  background-position: bottom;
   background-size: cover;
-  padding-left: 100px;
-  padding-top: 170px;
-  padding-bottom: 170px;
+  background-repeat: no-repeat;
 }
 
 #sign-up-cta {
+  position: relative;
+  top: 171px;
+  left: 10%;
   padding: 0 5rem 2.5rem 5rem;
   border: solid 1px #979797;
   border-radius: 4px;
@@ -171,12 +175,8 @@ header .mobile {
 }
 
 #sign-up-cta .striking {
-  font-family: "Rubik";
-  font-weight: regular;
-  padding-bottom: 12px;
-  font-size: 50px;
-  color: white;
-  line-height: 1.4;
+  font-family: "Rubik", sans-serif;
+  padding-bottom: .75rem;
 }
 
 #sign-up-cta .button {
@@ -184,7 +184,7 @@ header .mobile {
   padding: 1.25rem 7.25rem;
 }
 
-@media only screen and (max-width: 760px) {
+@media only screen and (max-width: 895px) {
   #sign-up-section {
     align-items: center;
     justify-content: center;
@@ -216,7 +216,7 @@ header .mobile {
   }
 }
 
-@media only screen and (max-width: 450px) {
+@media only screen and (max-width: 600px) {
   #sign-up-section {
     height: 20rem;
   }
@@ -247,17 +247,17 @@ header .mobile {
 }
 
 .feature .image-container {
+  width: 90%;
+  height: 65%;
   margin: 0 auto;
-  padding-left: 32px;
-  padding-right: 32px;
-  padding-top: 32px;
-  padding-bottom: 40px;
-  width: 620px;
-  height: 454px;
+}
+
+.feature .content {
+  padding: 2.5rem 0;
 }
 
 .feature h2 {
-  padding-bottom: 0.5rem;
+  padding-bottom: .5rem;
   font-size: 2.25rem;
   font-weight: bold;
   color: #4a4a4a;
@@ -270,20 +270,28 @@ header .mobile {
   color: #4a4a4a;
 }
 
-@media only screen and (max-width: 890px) {
+@media only screen and (max-width: 895px) {
+  #features-section {
+    padding: 1rem;
+  }
+
+  .feature {
+    margin: 0px .5rem;
+    padding: 1rem;
+  }
+
   .feature h2 {
-    font-size: 1.125rem;
+    font-size: 2rem;
     line-height: 1.3;
-    font-weight: normal;
   }
 
   .feature h3 {
-    font-size: 0.875rem;
+    font-size: .875rem;
     line-height: 1.4;
   }
 }
 
-@media only screen and (max-width: 760px) {
+@media only screen and (max-width: 600px) {
   #features-section {
     flex-flow: column;
     padding: 0;
@@ -292,6 +300,10 @@ header .mobile {
   .feature {
     margin: 0;
     padding: 1.25rem 1rem 0 1rem;
+  }
+
+  .feature .content {
+    padding: 1.25rem 0 1.875rem 0;
   }
 }
 
@@ -303,7 +315,7 @@ header .mobile {
 }
 
 #filters-section .content {
-  padding: 0 0.625rem;
+  padding: 0 .625rem;
   margin-bottom: 5rem;
 }
 
@@ -321,14 +333,12 @@ header .mobile {
 }
 
 #filters-section .images-container {
-  padding: 0 1%;
   display: flex;
-  width: 95%;
-  height: 230px;
-  object-fit: fill;
+  max-width: 100%;
+  padding: 0 1%;
 }
 
-@media only screen and (max-width: 760px) {
+@media only screen and (max-width: 600px) {
   #filters-section {
     padding: 1.5rem 0 0 0;
   }
@@ -338,14 +348,14 @@ header .mobile {
   }
 
   #filters-section .content h2 {
-    padding-bottom: 0.625rem;
+    padding-bottom: .625rem;
     font-size: 1.125rem;
     line-height: 1.3;
     font-weight: normal;
   }
 
   #filters-section .content h3 {
-    font-size: 0.875rem;
+    font-size: .875rem;
     line-height: 1.4;
   }
 
@@ -362,8 +372,16 @@ header .mobile {
 
 #quotes-section {
   background-color: #f3f3f3;
-  padding-top: 80px;
-  padding-bottom: 80px;
+}
+
+#quotes-section .content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5rem 1.5rem;
+}
+
+#quotes-section .quote {
   padding-right: 1.875rem;
   font-family: "Palatino", serif;
   font-size: 1.875rem;
@@ -372,35 +390,28 @@ header .mobile {
   color: #4a4a4a;
 }
 
-#quotes-section content {
-  padding: 5rem 0;
-}
-
-#quotes-section quote {
-  padding-right: 1.875rem;
-  font-family: "Palatino", serif;
-  font-size: 1.875rem;
-  line-height: 1.1;
-  font-style: italic;
-  color: #4a4a4a;
-}
-
-#quotes-section quote-citation {
+#quotes-section .quote-citation {
   height: 1.875rem;
-  font-size: 30px;
 }
 
-@media only screen and (max-width: 760px) {
-  #quotes-section content {
-    padding: 1.875rem 0.625rem;
+@media only screen and (max-width: 895px) {
+  #quotes-section .content {
+    padding: 3rem 1.5rem;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  #quotes-section .content {
+    flex-flow: column;
+    padding: 1.875rem .625rem;
   }
 
-  #quotes-section quote {
+  #quotes-section .quote {
     font-size: 1.5rem;
     line-height: 1.4;
   }
 
-  #quotes-section quote-citation {
+  #quotes-section .quote-citation {
     display: block;
     padding-top: 1rem;
     margin: auto;
@@ -417,15 +428,15 @@ footer {
 footer .content {
   color: white;
   display: flex;
-  font-size: 0.75rem;
+  font-size: .75rem;
 }
 
 footer .copyright {
   flex-grow: 1;
 }
 
-@media only screen and (min-width: 760px) {
+@media only screen and (max-width: 600px) {
   footer .content {
-    font-size: 0.625rem;
+    font-size: .625rem;
   }
 }
