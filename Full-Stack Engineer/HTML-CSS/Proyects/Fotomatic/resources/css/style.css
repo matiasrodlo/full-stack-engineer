@@ -18,6 +18,8 @@ html {
   border-radius: 4px;
   background-color: #4a4a4a;
   color: white;
+  line-height: 1.4;
+  font-family: "Roboto";
 }
 
 .image-container {
@@ -46,11 +48,16 @@ header {
 header .content {
   display: flex;
   align-items: center;
-  padding: 1.875rem;
+  height: 80px;
 }
 
 header .logo {
   flex: 1;
+  color: #4a4a4a;
+  font-size: 24px;
+  font-family: "Roboto";
+  text-decoration: none;
+  padding-left: 30px;
 }
 
 header nav ul {
@@ -59,6 +66,9 @@ header nav ul {
 
 nav li {
   padding-left: 3.5rem;
+  list-style-type: none;
+  font-size: 16px;
+  line-height: 1.6;
 }
 
 nav a {
@@ -66,11 +76,13 @@ nav a {
   line-height: 1.6;
   font-size: 1rem;
   color: #4a4a4a;
+  text-decoration: none;
 }
 
 header .icon {
   width: 1rem;
-  padding-left: .75rem;
+  padding-left: 30px;
+  padding-right: 30px;
 }
 
 header .mobile {
@@ -88,7 +100,7 @@ header .mobile {
   }
 
   header .content {
-    padding: .5rem 0;
+    padding: 0.5rem 0;
   }
 
   header .mobile ul {
@@ -103,7 +115,7 @@ header .mobile {
   }
 
   header .mobile .button {
-    padding: .1875rem .5rem;
+    padding: 0.1875rem 0.5rem;
     background-color: #9dc20b;
     line-height: 1.6;
     color: white;
@@ -117,6 +129,13 @@ header .mobile {
   justify-content: flex-start;
   align-items: flex-start;
   height: 43.5rem;
+  background-image: url("/HTML-CSS/Proyects/Fotomatic/resources/images/banner-landingpage.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  padding-left: 100px;
+  padding-top: 170px;
+  padding-bottom: 170px;
 }
 
 #sign-up-cta {
@@ -152,8 +171,12 @@ header .mobile {
 }
 
 #sign-up-cta .striking {
-  font-family: "Rubik", sans-serif;
-  padding-bottom: .75rem;
+  font-family: "Rubik";
+  font-weight: regular;
+  padding-bottom: 12px;
+  font-size: 50px;
+  color: white;
+  line-height: 1.4;
 }
 
 #sign-up-cta .button {
@@ -224,13 +247,17 @@ header .mobile {
 }
 
 .feature .image-container {
-  width: 90%;
-  height: 65%;
   margin: 0 auto;
+  padding-left: 32px;
+  padding-right: 32px;
+  padding-top: 32px;
+  padding-bottom: 40px;
+  width: 620px;
+  height: 454px;
 }
 
 .feature h2 {
-  padding-bottom: .5rem;
+  padding-bottom: 0.5rem;
   font-size: 2.25rem;
   font-weight: bold;
   color: #4a4a4a;
@@ -251,7 +278,7 @@ header .mobile {
   }
 
   .feature h3 {
-    font-size: .875rem;
+    font-size: 0.875rem;
     line-height: 1.4;
   }
 }
@@ -276,7 +303,7 @@ header .mobile {
 }
 
 #filters-section .content {
-  padding: 0 .625rem;
+  padding: 0 0.625rem;
   margin-bottom: 5rem;
 }
 
@@ -294,8 +321,11 @@ header .mobile {
 }
 
 #filters-section .images-container {
-  max-width: 100%;
   padding: 0 1%;
+  display: flex;
+  width: 95%;
+  height: 230px;
+  object-fit: fill;
 }
 
 @media only screen and (max-width: 760px) {
@@ -308,14 +338,14 @@ header .mobile {
   }
 
   #filters-section .content h2 {
-    padding-bottom: .625rem;
+    padding-bottom: 0.625rem;
     font-size: 1.125rem;
     line-height: 1.3;
     font-weight: normal;
   }
 
   #filters-section .content h3 {
-    font-size: .875rem;
+    font-size: 0.875rem;
     line-height: 1.4;
   }
 
@@ -332,6 +362,14 @@ header .mobile {
 
 #quotes-section {
   background-color: #f3f3f3;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  padding-right: 1.875rem;
+  font-family: "Palatino", serif;
+  font-size: 1.875rem;
+  line-height: 1.1;
+  font-style: italic;
+  color: #4a4a4a;
 }
 
 #quotes-section content {
@@ -349,11 +387,12 @@ header .mobile {
 
 #quotes-section quote-citation {
   height: 1.875rem;
+  font-size: 30px;
 }
 
 @media only screen and (max-width: 760px) {
   #quotes-section content {
-    padding: 1.875rem .625rem;
+    padding: 1.875rem 0.625rem;
   }
 
   #quotes-section quote {
@@ -378,7 +417,7 @@ footer {
 footer .content {
   color: white;
   display: flex;
-  font-size: .75rem;
+  font-size: 0.75rem;
 }
 
 footer .copyright {
@@ -387,6 +426,6 @@ footer .copyright {
 
 @media only screen and (min-width: 760px) {
   footer .content {
-    font-size: .625rem;
+    font-size: 0.625rem;
   }
 }
