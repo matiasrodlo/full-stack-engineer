@@ -74,3 +74,37 @@ h1 {
 p {
   font-size: 1.3em;
 }
+
+/* Reviews */
+
+.reviews {
+  display: flex;
+  justify-content: center;
+}
+
+h2 {
+  text-align: center;
+  font-size: 35px;
+  padding-bottom: 60px;
+  padding-top: 80px;
+}
+
+.book {
+  width: 300px;
+  padding-right: 60px;
+}
+.cover {
+  width: 100%;
+}
+
+h3 {
+  font-size: 20px;
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+.author {
+  font-weight: bold;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
