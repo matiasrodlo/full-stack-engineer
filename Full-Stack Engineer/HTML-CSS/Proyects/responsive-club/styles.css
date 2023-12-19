@@ -1,0 +1,76 @@
+/* General */
+
+* {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+  padding: 0;
+}
+
+main {
+  padding-top: 40px;
+  padding-left: 200px;
+  padding-right: 200px;
+}
+
+/* Header */
+
+header {
+  background-color: rgb(210, 210, 210);
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin: 0;
+  padding-left: 200px;
+  padding-right: 200px;
+  background-image: url("./resources/black-felt.png");
+  background-position: bottom;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+ul {
+  display: flex;
+  text-decoration: none;
+}
+
+li {
+  padding-left: 30px;
+  list-style: none;
+  align-self: center;
+  color: whitesmoke;
+}
+
+a {
+  color: whitesmoke;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.logo {
+  width: 20%;
+}
+
+/* about us */
+
+h1 {
+  text-align: center;
+  padding-bottom: 30px;
+}
+
+.why {
+  text-align: center;
+  display: flex;
+}
+
+.text {
+  padding-right: 20px;
+  text-align: justify;
+}
+
+.video {
+  padding-left: 100px;
+}
+p {
+  font-size: 1.3em;
+}
