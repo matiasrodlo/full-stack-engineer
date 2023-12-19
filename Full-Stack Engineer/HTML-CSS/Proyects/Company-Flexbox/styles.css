@@ -33,9 +33,14 @@ a {
 /* Banner */
 
 .banner {
-  background-color: rgba(255, 0, 0, 0.847);
+  background-color: rgba(255, 0, 0, 0.888);
+  background-image: url("./photos/black-felt.png");
+  background-position: bottom;
+  background-size: cover;
+  background-repeat: no-repeat;
   text-align: center;
   padding: 70px 0;
+  padding-top: 120px;
 }
 
 h1 {
@@ -59,4 +64,21 @@ h1 {
 
 h2 {
   font-size: 35px;
+}
+
+/* team */
+
+.team {
+  text-align: center;
+  padding-left: 200px;
+  padding-right: 200px;
+}
+
+.members {
+  display: flex;
+}
+
+.partner-1 {
+  width: 60%;
+  border-radius: 20%;
 }
