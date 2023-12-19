@@ -1,0 +1,49 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Header */
+
+header {
+  background-color: white;
+  padding: 10px;
+}
+
+ul {
+  display: flex;
+  list-style: none;
+}
+
+li {
+  font-size: 24px;
+  padding-right: 80px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.logo {
+  width: 20%;
+}
+
+/* Banner */
+
+.banner {
+  background-color: rgba(255, 0, 0, 0.847);
+  text-align: center;
+  padding: 70px 0;
+}
+
+h1 {
+  font-size: 55px;
+  color: whitesmoke;
+  font-weight: bolder;
+}
+
+.slogan {
+  font-size: 25px;
+  color: whitesmoke;
+}
