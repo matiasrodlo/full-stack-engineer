@@ -9,7 +9,7 @@
 }
 
 main {
-  padding-top: 40px;
+  padding-top: 100px;
   padding-left: 200px;
   padding-right: 200px;
 }
@@ -20,6 +20,7 @@ header {
   background-color: rgb(210, 210, 210);
   padding-top: 10px;
   padding-bottom: 10px;
+  width: 100%;
   margin: 0;
   padding-left: 200px;
   padding-right: 200px;
@@ -27,6 +28,7 @@ header {
   background-position: bottom;
   background-size: cover;
   background-repeat: no-repeat;
+  position: fixed;
 }
 
 ul {
@@ -107,4 +109,29 @@ h3 {
   font-weight: bold;
   padding-top: 10px;
   padding-bottom: 10px;
+}
+
+/* Footer */
+
+footer {
+  background-color: gray;
+  padding: 10px;
+}
+
+footer ul {
+  justify-content: center;
+}
+
+.footer {
+  align-self: center;
+}
+
+/* Tablet Responsive */
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+}
+
+/* Mobile Responsive */
+
+@media screen and (min-width: 767px) {
 }
