@@ -81,6 +81,7 @@ p {
 
 .reviews {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
 }
 
@@ -92,7 +93,7 @@ h2 {
 }
 
 .book {
-  width: 300px;
+  width: 200px;
   padding-right: 60px;
 }
 .cover {
@@ -129,9 +130,31 @@ footer ul {
 /* Tablet Responsive */
 
 @media screen and (min-width: 768px) and (max-width: 1023px) {
+  .logo {
+    content-visibility: hidden;
+  }
+
+  .why {
+    display: block;
+  }
+
+  .video {
+    content-visibility: hidden;
+  }
 }
 
 /* Mobile Responsive */
 
-@media screen and (min-width: 767px) {
+@media screen and (max-width: 767px) {
+  .logo {
+    content-visibility: hidden;
+  }
+
+  .why {
+    display: block;
+  }
+
+  .video {
+    content-visibility: hidden;
+  }
 }
