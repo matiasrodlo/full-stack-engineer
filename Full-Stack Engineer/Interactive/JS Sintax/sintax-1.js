@@ -68,3 +68,27 @@ console.log(typeof newVariable);
 newVariable = 1;
 
 console.log(typeof newVariable);
+
+////
+
+let sale = true;
+
+sale = false;
+
+if (sale) {
+  console.log("Time to buy!");
+}
+
+////
+
+let sale = true;
+
+sale = false;
+
+if (sale) {
+  console.log("Time to buy!");
+} else {
+  console.log("Time to wait for a sale.");
+}
+
+////
