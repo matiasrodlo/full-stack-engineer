@@ -69,3 +69,17 @@ const plantNeedsWater = function (day) {
 
 plantNeedsWater("Tuesday");
 console.log(plantNeedsWater("Tuesday"));
+
+////
+
+const plantNeedsWater = (day) => {
+  if (day === "Wednesday") {
+    return true;
+  } else {
+    return false;
+  }
+};
+
+////
+
+const plantNeedsWater = (day) => (day === "Wednesday" ? true : false);
