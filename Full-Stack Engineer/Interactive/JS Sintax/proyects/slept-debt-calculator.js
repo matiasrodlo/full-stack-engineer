@@ -1,20 +1,20 @@
-function getSleephours(day) {
+function getSleepHours(day) {
   let hoursSleep;
   switch (day) {
     case "monday":
-      hoursSleep = 1;
+      hoursSleep = 5;
       break;
     case "tuesday":
-      hoursSleep = 2;
+      hoursSleep = 6;
       break;
     case "wednesday":
-      hoursSleep = 3;
+      hoursSleep = 9;
       break;
     case "thursday":
       hoursSleep = 4;
       break;
     case "friday":
-      hoursSleep = 5;
+      hoursSleep = 4;
       break;
     case "saturday":
       hoursSleep = 6;
@@ -23,23 +23,47 @@ function getSleephours(day) {
       hoursSleep = 7;
       break;
     default:
-      hoursSleep = "How knows?";
+      hoursSleep = "Who knows?";
   }
   return hoursSleep;
 }
 
-// console.log(getSleephours("tuesday"));
-
 function getActualSleepHours() {
   let totalHours = 0;
-  totalHours += getSleephours("monday");
-  totalHours += getSleephours("tuesday");
-  totalHours += getSleephours("wednesday");
-  totalHours += getSleephours("thursday");
-  totalHours += getSleephours("friday");
-  totalHours += getSleephours("saturday");
-  totalHours += getSleephours("sunday");
+  totalHours += getSleepHours("monday");
+  totalHours += getSleepHours("tuesday");
+  totalHours += getSleepHours("wednesday");
+  totalHours += getSleepHours("thursday");
+  totalHours += getSleepHours("friday");
+  totalHours += getSleepHours("saturday");
+  totalHours += getSleepHours("sunday");
   return totalHours;
 }
 
-console.log(getActualSleepHours());
+function getIdealSleepHours() {
+  let idealHours = 4;
+  return idealHours * 7;
+}
+
+function calculateSleepDebt() {
+  let actualSleepHours = getActualSleepHours();
+  let idealSleepHours = getIdealSleepHours();
+
+  if (actualSleepHours === idealSleepHours) {
+    console.log("You have gotten enough sleep.");
+  } else if (actualSleepHours > idealSleepHours) {
+    console.log(
+      `Let's be productive! You are ${
+        actualSleepHours - idealSleepHours
+      } hours above the ideal sleep.`
+    );
+  } else {
+    console.log(
+      `Time to sleep! You are ${
+        idealSleepHours - actualSleepHours
+      } hours under the ideal sleep.`
+    );
+  }
+}
+
+calculateSleepDebt();
