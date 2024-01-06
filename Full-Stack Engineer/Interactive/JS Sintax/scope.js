@@ -18,3 +18,14 @@ function callMyNightSky() {
 }
 
 console.log(callMyNightSky());
+
+///////////////////////////////////////////////////////////
+
+function logVisibleLightWaves() {
+  const lightWaves = "Moonlight";
+  console.log(lightWaves);
+}
+
+logVisibleLightWaves(); // Moonlight
+
+console.log(lightWaves); // Error variable not defined
