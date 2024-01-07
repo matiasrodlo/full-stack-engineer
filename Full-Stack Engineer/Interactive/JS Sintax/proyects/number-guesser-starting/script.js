@@ -21,4 +21,15 @@ function compareGuesses(humanGuess, computerGuess, secretGuess) {
   }
 }
 
-console.log(compareGuesses(4, 9, 3));
+function updateScore(winner) {
+  if (winner === "human") {
+    humanScore++;
+  } else if (winner === "computer") {
+    computerScore++;
+  }
+}
+
+function advanceRound() {
+  currentRoundNumber += 1;
+  return currentRoundNumber;
+}
