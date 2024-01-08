@@ -5,3 +5,9 @@ let newYearsResolutions = [
 ];
 
 console.log(newYearsResolutions);
+
+////////////////////////////////////////////////////
+
+const hobbies = ["hola", "hola", "hola"];
+
+console.log(hobbies);
