@@ -80,3 +80,21 @@ for (let i = 0; i < rapperArray.length; i++) {
     break;
   }
 }
+
+//////////////////////////////////////////////////////
+
+var input = "you are the best del mundo";
+var resultArray = [];
+var resultString = "";
+
+for (let i = 0; i < input.length; i++) {
+  if (input[i] === "e" || input[i] === "u") {
+    resultArray.push(input[i]);
+  }
+  if (input[i] === "u") {
+    resultArray.push(input[i]);
+  }
+}
+
+resultString = resultArray.join("").toUpperCase();
+console.log(resultString);
