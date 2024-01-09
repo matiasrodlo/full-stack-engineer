@@ -98,3 +98,23 @@ for (let i = 0; i < input.length; i++) {
 
 resultString = resultArray.join("").toUpperCase();
 console.log(resultString);
+
+//////////////////////////////////////////////////////
+
+const hobbies = ["singing", "eating", "quidditch", "writing"];
+
+for (let i = 0; i < hobbies.length; i++) {
+  console.log(`I enjoy ${hobbies[i]}.`);
+}
+// both are the same
+
+const hobbies = ["singing", "eating", "quidditch", "writing"];
+
+for (const hobby of hobbies) {
+  console.log(`I enjoy ${hobby}.`);
+}
+
+//I enjoy singing.
+//I enjoy eating.
+//I enjoy quidditch.
+//I enjoy writing.
