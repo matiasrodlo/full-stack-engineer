@@ -53,3 +53,16 @@ while (currentCard !== "spade") {
   currentCard = cards[Math.floor(Math.random() * 4)];
   console.log(currentCard);
 }
+
+///////////////////////////////////////////////////
+
+var cupsOfSugarNeeded = 10;
+var cupsAdded = 0;
+
+do {
+  cupsAdded++;
+} while (cupsAdded < cupsOfSugarNeeded);
+{
+  cupsAdded++;
+  console.log(cupsAdded);
+}
