@@ -118,3 +118,22 @@ for (const hobby of hobbies) {
 //I enjoy eating.
 //I enjoy quidditch.
 //I enjoy writing.
+
+//////////////////////////////////////////////////////
+
+const spellingWord = "hippopotamus";
+
+// Write your code below
+for (words of spellingWord) {
+  console.log(words);
+}
+
+const pokemonList = ["Pikachu", "Charizard", "Squirtle", "Yoshi", "Snorlax"];
+
+// Write your code below
+for (pokemon of pokemonList) {
+  if (pokemon === "Yoshi") {
+    continue;
+  }
+  console.log(`You caught a ${pokemon}!`);
+}
