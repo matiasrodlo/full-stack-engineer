@@ -130,3 +130,5 @@ greenEnergy(spaceship);
 remotelyDisable(spaceship);
 
 console.log(spaceship);
+
+//////////////////////////////
