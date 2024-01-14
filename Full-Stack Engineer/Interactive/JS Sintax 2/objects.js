@@ -104,3 +104,29 @@ let spaceship = {
 let capFave = spaceship.crew.captain["favorite foods"][0];
 
 let firstPassenger = spaceship.passengers[0];
+
+/////////////////////////////////////////////////////////
+
+let spaceship = {
+  "Fuel Type": "Turbo Fuel",
+  homePlanet: "Earth",
+};
+
+function greenEnergy(spacecraft) {
+  // Check if the 'Fuel Type' property exists before setting it
+  if (spacecraft.hasOwnProperty("Fuel Type")) {
+    spacecraft["Fuel Type"] = "avocado oil";
+  } else {
+    // If the 'Fuel Type' property doesn't exist, you may choose to create it
+    spacecraft["Fuel Type"] = "avocado oil";
+  }
+}
+
+function remotelyDisable(device) {
+  device.disabled = true;
+}
+
+greenEnergy(spaceship);
+remotelyDisable(spaceship);
+
+console.log(spaceship);
