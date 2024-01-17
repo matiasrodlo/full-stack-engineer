@@ -248,3 +248,19 @@ const robot = {
 robot.numOfSensors = 100;
 
 console.log(robot._numOfSensors);
+
+/////////////////////////////////////////////////////////
+
+function robotFactory(model, mobile) {
+  return {
+    model: model,
+    mobile: mobile,
+    beep() {
+      console.log("Beep Boop");
+    },
+  };
+}
+
+const tinCan = robotFactory("P-500", true);
+
+console.log(tinCan.beep());
