@@ -137,3 +137,14 @@ function shoutGreetings(greetings) {
 const greetings = ["hello", "hi", "heya", "oi", "hey", "yo"];
 console.log(shoutGreetings(greetings));
 // Should print [ 'HELLO!', 'HI!', 'HEYA!', 'OI!', 'HEY!', 'YO!' ]
+
+////////////////////////////////////////////////////////////
+
+function sortYears(years) {
+  return years.sort((a, b) => b - a);
+}
+
+// Test the function
+const yearsArray = [1990, 2005, 1980, 2015, 1975];
+console.log(sortYears(yearsArray));
+// Example output: [2015, 2005, 1990, 1980, 1975]
