@@ -30,3 +30,20 @@ function reverseArray(arr) {
 const sentence = ["sense.", "make", "all", "will", "This"];
 
 console.log(reverseArray(sentence));
+
+//////////////////////////////////////////////////////////////
+
+// Write your code here:
+
+function greetAliens(alien) {
+  for (let i = 0; aliens.length > i; i++)
+    console.log(
+      `Oh powerful ${alien}, we humans offer our unconditional surrender!`
+    );
+}
+
+// When you're ready to test your code, uncomment the below and run:
+
+const aliens = ["Blorgous", "Glamyx", "Wegord", "SpaceKing"];
+
+greetAliens(aliens);
