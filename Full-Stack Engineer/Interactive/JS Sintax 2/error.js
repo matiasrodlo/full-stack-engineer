@@ -99,4 +99,16 @@ console.log("getLaterFirstLetter('avocado', 'blueberry') returns: " + getLaterFi
 console.log("getLaterFirstLetter('zebra', 'aardvark') returns : " + getLaterFirstLetter('zebra', 'aardvark'));
 
 // Should return null
-console.log("getLaterFirstLetter('astro', 'afar') returns: " + getLaterFirstLetter('astro', 'afar'));    
+    console.log("getLaterFirstLetter('astro', 'afar') returns: " + getLaterFirstLetter('astro', 'afar'));
+
+///////////////////////////////////////////////////////////
+    
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/repeat
+// Link to String.repeat() documentation: 
+
+function doubleString(string) {
+  return string.repeat(2);
+}
+
+// Should return 'echoecho'
+console.log("doubleString('echo') returns: " + doubleString('echo'));
