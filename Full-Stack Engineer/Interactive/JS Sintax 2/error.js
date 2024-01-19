@@ -124,4 +124,27 @@ function containsCake(string) {
 console.log("containsCake('I think cake is my soul mate.') returns: " + containsCake('I think cake is my soul mate.'));
 
 // Should return false
-console.log("containsCake('Pie is certainly the coolest dessert.') returns: " + containsCake('Pie is certainly the coolest dessert.'));
+    console.log("containsCake('Pie is certainly the coolest dessert.') returns: " + containsCake('Pie is certainly the coolest dessert.'));
+
+///////////////////////////////////////////////////////////
+
+function isStringPerfectLength(string, minLength, maxLength) {
+  const stringLength = string.length;
+  
+  if (stringLength < minLength) {
+    return false;
+  } else if (stringLength > maxLength) {
+    return false;
+  } else {
+    return true;
+  }
+}
+
+// Should return true
+console.log("isStringPerfectLength('Dog', 2, 4) returns: " + isStringPerfectLength('Dog', 2, 4));
+
+// Should return false
+console.log("isStringPerfectLength('Mouse', 2, 4) returns: " + isStringPerfectLength('Mouse', 2, 4));
+
+// Should return false
+console.log("isStringPerfectLength('Cat', 4, 9) returns: " + isStringPerfectLength('Cat', 4, 9));
