@@ -120,3 +120,20 @@ function squareNums(arr) {
     return arr.map(toSquare)
 }
 */
+
+////////////////////////////////////////////////////////////
+
+// Write your code here:
+
+function shoutGreetings(greetings) {
+  let newArray = [];
+  for (let i = 0; i < greetings.length; i++) {
+    newArray.push(greetings[i].toUpperCase() + "!");
+  }
+  return newArray;
+}
+
+// Test the function
+const greetings = ["hello", "hi", "heya", "oi", "hey", "yo"];
+console.log(shoutGreetings(greetings));
+// Should print [ 'HELLO!', 'HI!', 'HEYA!', 'OI!', 'HEY!', 'YO!' ]
