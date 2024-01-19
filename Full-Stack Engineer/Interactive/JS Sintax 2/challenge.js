@@ -47,3 +47,15 @@ function greetAliens(alien) {
 const aliens = ["Blorgous", "Glamyx", "Wegord", "SpaceKing"];
 
 greetAliens(aliens);
+
+//////////////////////////////////////////////////////////////
+
+const convertToBaby = function (animals) {
+  const newArray = [];
+
+  for (let i = 0; i < animals.length; i++) {
+    newArray.push(`baby ${animals[i]}`);
+  }
+
+  return newArray;
+};
