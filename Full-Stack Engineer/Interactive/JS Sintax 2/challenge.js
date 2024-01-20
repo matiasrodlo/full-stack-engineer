@@ -328,3 +328,28 @@ function factorial(num) {
   }
   return result;
 }
+
+////////////////////////////////////////////////////////////
+
+function subLength(str, char) {
+  const firstIndex = str.indexOf(char);
+
+  // If the character is not found or found less than 2 times, return 0
+  if (firstIndex === -1 || str.indexOf(char, firstIndex + 1) === -1) {
+    return 0;
+  }
+
+  const secondIndex = str.indexOf(char, firstIndex + 1);
+
+  // If there are more than two occurrences, return 0
+  if (str.indexOf(char, secondIndex + 1) !== -1) {
+    return 0;
+  }
+
+  // Return the length between the two occurrences, including the characters
+  return secondIndex - firstIndex + 1;
+}
+
+// Example usage:
+const result = subLength("momentum", "m");
+console.log(result); // Output: 3
