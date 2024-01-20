@@ -353,3 +353,27 @@ function subLength(str, char) {
 // Example usage:
 const result = subLength("momentum", "m");
 console.log(result); // Output: 3
+
+////////////////////////////////////////////////////////////
+
+function groceries(groceryItems) {
+  const itemNames = groceryItems.map((item) => item.item);
+
+  if (itemNames.length <= 1) {
+    return itemNames.join("");
+  } else if (itemNames.length === 2) {
+    return itemNames.join(" and ");
+  } else {
+    const lastTwoItems = itemNames.slice(-2).join(" and ");
+    const remainingItems = itemNames.slice(0, -2).join(", ");
+
+    return `${remainingItems}, ${lastTwoItems}`;
+  }
+}
+
+// Example usage:
+const groceryItems = [{ item: "Sausage" }, { item: "Peppers" }];
+
+const result = groceries(groceryItems);
+console.log(result);
+// Output: "Sausage and Peppers"
