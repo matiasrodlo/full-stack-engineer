@@ -225,3 +225,36 @@ const dinner = [
 ];
 
 console.log(isTheDinnerVegan(dinner));
+
+////////////////////////////////////////////////////////////
+
+const speciesArray = [
+  { speciesName: "shark", numTeeth: 50 },
+  { speciesName: "dog", numTeeth: 42 },
+  { speciesName: "alligator", numTeeth: 80 },
+  { speciesName: "human", numTeeth: 32 },
+];
+
+// Write your code here:
+
+function sortSpeciesByTeeth(speciesArray) {
+  // Define a comparison function to use with sort
+  function compareTeeth(speciesObj1, speciesObj2) {
+    return speciesObj1.numTeeth - speciesObj2.numTeeth;
+  }
+
+  // Sort the array using the comparison function
+  const sortedSpeciesArray = speciesArray.slice().sort(compareTeeth);
+
+  return sortedSpeciesArray;
+}
+
+// Feel free to comment out the code below when you're ready to test your function!
+
+console.log(sortSpeciesByTeeth(speciesArray));
+
+// Should print:
+// [ { speciesName: 'human', numTeeth: 32 },
+//   { speciesName: 'dog', numTeeth: 42 },
+//   { speciesName: 'shark', numTeeth: 50 },
+//   { speciesName: 'alligator', numTeeth: 80 } ]
