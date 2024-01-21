@@ -30,26 +30,20 @@
    - *Description:* Records changes in the working directory to the local repository, creating a new commit.
    - *How to use:* After staging changes, run `git commit -m "Your commit message"` to create a new commit with a descriptive message.
 
-## Switching Branches or Commits
-
-6. **`git checkout`**
-   - *Description:* Switches branches or restores working tree files.
-   - *How to use:* Run `git checkout <branch>` to switch to a branch or `git checkout <commit>` to move to a specific commit.
-
 ## Pushing Changes
 
-7. **`git push`**
+6. **`git push`**
    - *Description:* Pushes local commits to a remote repository.
    - *How to use:* After committing changes locally, run `git push` to upload the changes to the remote repository.
 
 ## Viewing Commit History
 
-8. **`git log`**
+7. **`git log`**
    - *Description:* Displays a log of all commits in reverse chronological order.
    - *How to use:* Run `git log` to see commit history. It provides commit messages, authors, dates, and commit hashes.
 
 ## Viewing the Latest Commit (HEAD)
 
-9. **`git show HEAD`**
+8. **`git show HEAD`**
    - *Description:* Displays information about the latest commit (HEAD).
-   - *How to use:* Run `git show HEAD` to see details of the most recent commit, including changes, commit message, author, and date.
+   - *How to use:* Run `git show HEAD` to see de
