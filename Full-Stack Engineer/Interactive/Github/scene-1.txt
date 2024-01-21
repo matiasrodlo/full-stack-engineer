@@ -1,28 +1,26 @@
-Notes of Github
+# Git Commands Cheat Sheet
 
-//////////////////////////////////////
+1. **`git init`**
+   - *Description:* Initializes a new Git repository.
+   - *How to use:* Open your terminal, navigate to the desired project directory, and run `git init`.
 
-# git init
-# description: Initializes a new Git repository, creating a .git subdirectory with configuration files.
+2. **`git status`**
+   - *Description:* Displays the status of changes in the working directory.
+   - *How to use:* After making changes in your project, run `git status` to see which files are untracked, modified, or staged.
 
-//////////////////////////////////////
+3. **`git add`**
+   - *Description:* Adds changes in the working directory to the staging area.
+   - *How to use:* Use `git add <file>` to stage a specific file or `git add .` to stage all changes.
 
-# git status
-# description: Displays the status of changes as untracked, modified, or staged in the working directory.
+4. **`git diff`**
+   - *Description:* Shows the differences between the working directory and the staging area or the last commit.
+   - *How to use:* Run `git diff` to see the changes before staging. It's often used with specific file paths like `git diff <file>`.
 
-//////////////////////////////////////
+5. **`git commit`**
+   - *Description:* Records changes in the working directory to the local repository, creating a new commit.
+   - *How to use:* After staging changes, run `git commit -m "Your commit message"` to create a new commit with a descriptive message.
 
-# git add
-# description: Adds changes in the working directory to the staging area, preparing them for a commit.
+6. **`git log`**
+   - *Description:* Displays a log of all commits in reverse chronological order.
+   - *How to use:* Run `git log` to see commit history. It provides commit messages, authors, dates, and commit hashes.
 
-//////////////////////////////////////
-
-# git diff
-# description: Shows the differences between the working directory and the staging area or the last commit.
-
-//////////////////////////////////////
-
-# git commit
-# description: Records changes in the working directory to the local repository, creating a new commit with a unique identifier.
-
-//////////////////////////////////////
