@@ -230,5 +230,3 @@ Build a PERN app of your choosing and deploy it to Heroku.
 
 Complete the final Unit the Full-Stack Career Path.
 ```
-
-This structure separates the content into Front-End, Back-End, Security and DevOps, Technical Interview Preparation, and Final Projects sections for better organization and readability.
