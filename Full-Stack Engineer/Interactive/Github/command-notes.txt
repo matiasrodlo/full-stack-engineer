@@ -1,31 +1,49 @@
-# Git Commands Cheat Sheet
+# Git Workflow Cheat Sheet
 
-# Git Commands Cheat Sheet
+## Initialization
 
 1. **`git init`**
    - *Description:* Initializes a new Git repository.
    - *How to use:* Open your terminal, navigate to the desired project directory, and run `git init`.
 
+## Checking Status
+
 2. **`git status`**
    - *Description:* Displays the status of changes in the working directory.
    - *How to use:* After making changes in your project, run `git status` to see which files are untracked, modified, or staged.
+
+## Staging Changes
 
 3. **`git add`**
    - *Description:* Adds changes in the working directory to the staging area.
    - *How to use:* Use `git add <file>` to stage a specific file or `git add .` to stage all changes.
 
+## Viewing Changes
+
 4. **`git diff`**
    - *Description:* Shows the differences between the working directory and the staging area or the last commit.
    - *How to use:* Run `git diff` to see the changes before staging. It's often used with specific file paths like `git diff <file>`.
+
+## Committing Changes
 
 5. **`git commit`**
    - *Description:* Records changes in the working directory to the local repository, creating a new commit.
    - *How to use:* After staging changes, run `git commit -m "Your commit message"` to create a new commit with a descriptive message.
 
+## Pushing Changes
+
 6. **`git push`**
    - *Description:* Pushes local commits to a remote repository.
    - *How to use:* After committing changes locally, run `git push` to upload the changes to the remote repository.
 
+## Viewing Commit History
+
 7. **`git log`**
    - *Description:* Displays a log of all commits in reverse chronological order.
    - *How to use:* Run `git log` to see commit history. It provides commit messages, authors, dates, and commit hashes.
+
+## Viewing the Latest Commit (HEAD)
+
+8. **`git show HEAD`**
+   - *Description:* Displays information about the latest commit (HEAD).
+   - *How to use:* Run `git show HEAD` to see details of the most recent commit, including changes, commit message, author, and date.
