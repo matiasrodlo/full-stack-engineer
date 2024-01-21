@@ -2,5 +2,14 @@ Harry Programmer and the Sorcerer’s Code: Scene 1
 
 //////////////////////////////////////
 
+git init
+
 The word init means initialize. The command sets up all the tools Git needs to begin tracking changes made to the project.
 
+//////////////////////////////////////
+
+git status
+
+As you write the screenplay, you will be changing the contents of the working directory. You can check the status of those changes with:
+
+//////////////////////////////////////
