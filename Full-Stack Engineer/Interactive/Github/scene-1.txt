@@ -1,15 +1,28 @@
-Harry Programmer and the Sorcerer’s Code: Scene 1
+Notes of Github
 
 //////////////////////////////////////
 
-git init
-
-The word init means initialize. The command sets up all the tools Git needs to begin tracking changes made to the project.
+# git init
+# description: Initializes a new Git repository, creating a .git subdirectory with configuration files.
 
 //////////////////////////////////////
 
-git status
+# git status
+# description: Displays the status of changes as untracked, modified, or staged in the working directory.
 
-As you write the screenplay, you will be changing the contents of the working directory. You can check the status of those changes with:
+//////////////////////////////////////
+
+# git add
+# description: Adds changes in the working directory to the staging area, preparing them for a commit.
+
+//////////////////////////////////////
+
+# git diff
+# description: Shows the differences between the working directory and the staging area or the last commit.
+
+//////////////////////////////////////
+
+# git commit
+# description: Records changes in the working directory to the local repository, creating a new commit with a unique identifier.
 
 //////////////////////////////////////
