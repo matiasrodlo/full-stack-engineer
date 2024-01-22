@@ -1,4 +1,3 @@
-```markdown
 # Full-Stack Engineer Career Path
 
 ## Overview
@@ -227,4 +226,3 @@ Build a PERN app of your choosing and deploy it to Heroku.
 ### 51. Next Steps in Your Full-Stack Engineer Journey
 
 Complete the final Unit the Full-Stack Career Path.
-```
