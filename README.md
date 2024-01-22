@@ -1,5 +1,3 @@
-Certainly! Here's an improved organization of the document in markdown:
-
 ```markdown
 # Full-Stack Engineer Career Path
 
