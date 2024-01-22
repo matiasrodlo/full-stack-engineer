@@ -56,3 +56,10 @@ document.getElementsByTagName('li')[0].innerHTML = 'Dobby';
 document.querySelector('body').style.backgroundColor = '#201F2E';
 
 document.querySelector('.heading').style.fontFamily = 'Roboto';
+
+///////////////////////////////////////////////////////////
+
+const first = document.body.children[0];
+first.innerHTML = 'BROWN BEARS ARE AWESOME!';
+
+first.parentNode.style.backgroundColor = 'beige';
