@@ -117,7 +117,7 @@ li {
   margin-top: 27px;
 }
 .ingredients {
-  background-color: orange;
+  background-color: midnightblue;
   padding: 30px;
   width: 50%;
 }
@@ -133,7 +133,7 @@ li {
   text-align: left;
 }
 .nutrition {
-  background-color: cyan;
+  background-color: lightgray;
   padding: 30px;
   width: 50%;
 }
