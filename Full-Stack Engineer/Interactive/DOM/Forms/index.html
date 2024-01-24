@@ -2,202 +2,10 @@
 <html lang="en" dir="ltr">
 
 <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
-    <title>HTML Forms</title>
-</head>
-
-<body>
-    <section id="overlay">
-        <img src="https://content.codecademy.com/courses/web-101/unit-6/htmlcss1-img_burger-logo.svg"
-            alt="Davie's Burgers Logo" id="logo">
-        <hr>
-        <form action="/practice.html" method="post">
-            <h1>Title</h1>
-            <p>Details</p>
-        </form>
-    </section>
-</body>
-
-</html>
-
-/////////////////////////////////////////////////////////////////////////
-
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-
-<head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
-    <title>Adding a Text Input</title>
-</head>
-
-<body>
-    <section id="overlay">
-        <img src="https://content.codecademy.com/courses/web-101/unit-6/htmlcss1-img_burger-logo.svg"
-            alt="Davie's Burgers Logo" id="logo">
-        <hr>
-        <form>
-            <h1>Login to start creating a burger!</h1>
-            <input type="text" name="username" value="Davie">
-        </form>
-    </section>
-</body>
-
-</html>
-
-/////////////////////////////////////////////////////////////////////////
-
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-
-<head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
-    <title>Labels</title>
-</head>
-
-<body>
-    <section id="overlay">
-        <img src="https://content.codecademy.com/courses/web-101/unit-6/htmlcss1-img_burger-logo.svg"
-            alt="Davie's Burgers Logo" id="logo">
-        <hr>
-        <form>
-            <h1>Login to start creating a burger!</h1>
-            <label for="username">
-                <input type="text" id="username">
-            </label>
-            <input type="text" name="username" id="username">
-        </form>
-    </section>
-</body>
-
-</html>
-
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-
-/////////////////////////////////////////////////////////////////////////
-
-<head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
-    <title>Password Input</title>
-</head>
-
-<body>
-    <section id="overlay">
-        <img src="https://content.codecademy.com/courses/web-101/unit-6/htmlcss1-img_burger-logo.svg"
-            alt="Davie's Burgers Logo" id="logo">
-        <hr>
-        <form>
-            <h1>Login to start creating a burger!</h1>
-            <label for="username">Username:</label>
-            <input type="text" name="username" id="username">
-            <br>
-            <label for="user-pw">Password:</label>
-            <input type="password" id="user-pw" name="user-pw">
-        </form>
-    </section>
-</body>
-
-</html>
-
-/////////////////////////////////////////////////////////////////////////
-
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-
-<head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
-    <title>Range Input</title>
-</head>
-
-<body>
-    <section id="overlay">
-        <img src="https://content.codecademy.com/courses/web-101/unit-6/htmlcss1-img_burger-logo.svg"
-            alt="Davie's Burgers Logo" id="logo">
-        <hr>
-        <form>
-            <h1>Create a burger!</h1>
-            <section class="protein">
-                <label for="patty">What type of protein would you like?</label>
-                <input type="text" name="patty" id="patty" value="beef">
-            </section>
-            <hr>
-
-            <section class="patties">
-                <label for="amount">How many patties would you like?</label>
-                <input id="amount" type="number" step="1" name="amount">
-
-            </section>
-        </form>
-    </section>
-</body>
-
-</html>
-
-/////////////////////////////////////////////////////////////////////////
-
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-
-<head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
-    <title>Range Input</title>
-</head>
-
-<body>
-    <section id="overlay">
-        <img src="https://content.codecademy.com/courses/web-101/unit-6/htmlcss1-img_burger-logo.svg"
-            alt="Davie's Burgers Logo" id="logo">
-        <hr>
-        <form>
-            <h1>Create a burger!</h1>
-            <section class="protein">
-                <label for="patty">What type of protein would you like?</label>
-                <input type="text" name="patty" id="patty">
-            </section>
-            <hr>
-            <section class="patties">
-                <label for="amount">How many patties would you like?</label>
-                <input type="number" name="amount" id="amount">
-            </section>
-            <hr>
-
-            <section class="cooked">
-                <label for="doneness">How do you want your patty cooked</label>
-                <br>
-                <span>Rare</span>
-                <input id="doneness" name="doneness" type="range" min="0" max="5" step="0.5">
-
-                <span>Well-Done</span>
-            </section>
-
-        </form>
-    </section>
-</body>
-
-</html>
-
-/////////////////////////////////////////////////////////////////////////
-
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-
-<head>
     <meta charset="utf-8" />
     <link rel="stylesheet" type="text/css" href="style.css" />
     <link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet" />
-    <title>Checkbox Input</title>
+    <title>Dropdown List</title>
 </head>
 
 <body>
@@ -225,80 +33,35 @@
                 <span>Well-Done</span>
             </section>
             <hr />
-
             <section class="toppings">
                 <span>What toppings would you like?</span>
                 <br />
-                <label for="topp">Topping</label>
-                <input type="checkbox" name="topping" id="topp" name="topp" value="topp">
+                <input type="checkbox" name="topping" id="lettuce" value="lettuce" />
                 <label for="lettuce">Lettuce</label>
-                <input id="lettuce" name="topping" type="checkbox" value="lettuce" />
+                <input type="checkbox" name="topping" id="tomato" value="tomato" />
                 <label for="tomato">Tomato</label>
-                <input id="tomato" type="checkbox" name="topping" value="tomato" />
-            </section>
-        </form>
-    </section>
-</body>
-
-</html>
-
-/////////////////////////////////////////////////////////////////////////
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-
-<head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
-    <title>Radio Input</title>
-</head>
-
-<body>
-    <section id="overlay">
-        <img src="https://content.codecademy.com/courses/web-101/unit-6/htmlcss1-img_burger-logo.svg"
-            alt="Davie's Burgers Logo" id="logo">
-        <hr>
-        <form>
-            <h1>Create a burger!</h1>
-            <section class="protein">
-                <label for="patty">What type of protein would you like?</label>
-                <input type="text" name="patty" id="patty">
-            </section>
-            <hr>
-            <section class="patties">
-                <label for="amount">How many patties would you like?</label>
-                <input type="number" name="amount" id="amount">
-            </section>
-            <hr>
-            <section class="cooked">
-                <label for="doneness">How do you want your patty cooked</label>
-                <br>
-                <span>Rare</span>
-                <input type="range" name="doneness" id="doneness" value="3" min="1" max="5">
-                <span>Well-Done</span>
-            </section>
-            <hr>
-            <section class="toppings">
-                <span>What toppings would you like?</span>
-                <br>
-                <input type="checkbox" name="topping" id="lettuce" value="lettuce">
-                <label for="lettuce">Lettuce</label>
-                <input type="checkbox" name="topping" id="tomato" value="tomato">
-                <label for="tomato">Tomato</label>
-                <input type="checkbox" name="topping" id="onion" value="onion">
+                <input type="checkbox" name="topping" id="onion" value="onion" />
                 <label for="onion">Onion</label>
             </section>
-            <hr>
-
+            <hr />
             <section class="cheesy">
                 <span>Would you like to add cheese?</span>
-                <br>
-                <input id="yes" type="radio" name="cheese" value="yes">
+                <br />
+                <input type="radio" name="cheese" id="yes" value="yes" />
                 <label for="yes">Yes</label>
-                <input id="no" type="radio" name="cheese" value="no">
+                <input type="radio" name="cheese" id="no" value="no" />
                 <label for="no">No</label>
             </section>
+            <hr />
 
+            <section class="bun-type">
+                <label for="bun">What type of bun would you like?</label>
+                <select id="bun" name="bun">
+                    <option value="sesame">Sesame</option>
+                    <option value="potato">Potato</option>
+                    <option value="apple">Apple</option>
+                </select>
+            </section>
         </form>
     </section>
 </body>
