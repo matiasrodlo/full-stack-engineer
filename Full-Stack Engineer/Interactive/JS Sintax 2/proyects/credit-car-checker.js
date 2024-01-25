@@ -40,8 +40,6 @@ const batch = [
 
 // Add your functions below:
 
-// Add your functions below:
-
 function validateCred(batch) {
   const validCards = [valid1, valid2, valid3, valid4, valid5];
 
