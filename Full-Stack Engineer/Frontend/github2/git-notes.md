@@ -18,7 +18,13 @@
      - Resolve any merge conflicts if necessary.
 
 3. **`git branch -d`**
-   - _Description:_ Deletes a specified branch.
+
+   - _Description:_ Deletes a specified branch (safe delete, checks for unmerged changes).
    - _How to use:_
      - Ensure you are not currently on the branch you want to delete: `git checkout <another_branch>`
      - Delete the branch: `git branch -d <branch_to_delete>`
+
+4. **`git branch -D`**
+   - _Description:_ Forces the deletion of a specified branch (irrespective of unmerged changes).
+   - _How to use:_
+     - Use with caution as it deletes the branch forcefully: `git branch -D <branch_to_delete>`
