@@ -72,8 +72,16 @@
     - _How to use:_ Ensure you are in the branch where you want to merge changes: `git checkout <your_branch>`
       Run `git merge origin/master` to merge changes from the remote `master` branch.
 
-## Pushing Changes to Remote
+## Rebasing Changes
 
-12. **`git push origin <your_branch_name>`**
-    - _Description:_ Pushes your local changes to the remote repository.
-    - _How to use:_ Run `git push origin <your_branch_name>` to push changes to the specified branch on the remote repository.
+12. **`git rebase`**
+
+    - _Description:_ Applies changes from one branch onto another.
+    - _How to use:_
+      - Ensure you are on the branch where you want to apply changes: `git checkout <your_branch>`
+      - Run `git rebase <base_branch>` to rebase your branch onto the specified base branch.
+      - Resolve any conflicts if needed.
+
+13. **`git rebase --abort`**
+    - _Description:_ Aborts an ongoing rebase operation.
+    - _How to use:_ If you encounter issues during rebase and want to cancel it, run `git rebase --abort`.
