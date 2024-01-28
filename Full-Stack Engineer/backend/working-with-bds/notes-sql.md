@@ -143,3 +143,32 @@
              END AS new_column
       FROM table_name;
       ```
+
+## Aggregate Functions
+
+24. **`COUNT()`**
+
+    - _Description:_ Counts the number of rows in a specified column or the entire table.
+    - _How to use:_ `SELECT COUNT(column_name) FROM table_name;`
+
+25. **`SUM()`**
+
+    - _Description:_ Calculates the sum of values in a specified column.
+    - _How to use:_ `SELECT SUM(column_name) FROM table_name;`
+
+26. **`MAX()` and `MIN()`**
+
+    - _Description:_ Retrieve the largest or smallest value in a specified column.
+    - _How to use:_ `SELECT MAX(column_name) FROM table_name;` or `SELECT MIN(column_name) FROM table_name;`
+
+27. **`AVG()`**
+
+    - _Description:_ Calculates the average of values in a specified column.
+    - _How to use:_ `SELECT AVG(column_name) FROM table_name;`
+
+28. **`ROUND()`**
+
+    - _Description:_ Rounds the values in a specified column to a specified number of decimal places.
+    - _How to use:_ `SELECT ROUND(column_name, decimals) FROM table_name;`
+
+29. \*\*`
