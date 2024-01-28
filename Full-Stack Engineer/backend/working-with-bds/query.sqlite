@@ -55,3 +55,4 @@ WHEN genre = 'comedy' THEN 'Chill'
 ELSE 'Intense'
 END AS 'Mood'
 FROM movies;
+
