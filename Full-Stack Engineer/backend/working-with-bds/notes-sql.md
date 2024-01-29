@@ -1,3 +1,6 @@
+Sure, here's the updated SQL Query Cheat Sheet:
+
+````markdown
 # SQL Query Cheat Sheet
 
 ## Initialization
@@ -139,10 +142,13 @@
              CASE
                 WHEN condition1 THEN 'output1'
                 WHEN condition2 THEN 'output2'
-                ELSE 'default_output'
-             END AS new_column
-      FROM table_name;
+                ELSE '
       ```
+
+default_output'
+END AS new_column
+FROM table_name;
+```
 
 ## Aggregate Functions
 
@@ -167,8 +173,48 @@
     - _How to use:_ `SELECT AVG(column_name) FROM table_name;`
 
 28. **`ROUND()`**
-
     - _Description:_ Rounds the values in a specified column to a specified number of decimal places.
     - _How to use:_ `SELECT ROUND(column_name, decimals) FROM table_name;`
 
-29. \*\*`
+## Advanced Commands
+
+29. **`JOIN`**
+
+    - _Description:_ Combines rows from different tables based on a specified condition.
+    - _How to use:_ `SELECT * FROM table1 JOIN table2 ON table1.column = table2.column;`
+
+30. **`LEFT JOIN`**
+
+    - _Description:_ Returns every row from the left table and fills in NULL values for unmatched rows from the right table.
+    - _How to use:_ `SELECT * FROM table1 LEFT JOIN table2 ON table1.column = table2.column;`
+
+31. **`PRIMARY KEY`**
+
+    - _Description:_ A column that serves as a unique identifier for rows in a table.
+    - _How to use:_ `CREATE TABLE table_name (column1 datatype PRIMARY KEY, ...);`
+
+32. **`FOREIGN KEY`**
+
+    - _Description:_ A column that contains the primary key of another table, establishing a link between the two tables.
+    - _How to use:_ `CREATE TABLE table_name (column1 datatype, column2 datatype, FOREIGN KEY (column1) REFERENCES another_table(column1));`
+
+33. **`CROSS JOIN`**
+
+    - _Description:_ Combines all rows of one table with all rows of another table, creating a Cartesian product.
+    - _How to use:_ `SELECT * FROM table1 CROSS JOIN table2;`
+
+34. **`UNION`**
+
+    - _Description:_ Combines the result sets of two or more SELECT statements.
+    - _How to use:_ `SELECT column1, column2 FROM table1 UNION SELECT column1, column2 FROM table2;`
+
+35. **`WITH`**
+    - _Description:_ Defines one or more temporary tables (common table expressions) that can be referenced within the context of a SELECT, INSERT, UPDATE, or DELETE statement.
+    - _How to use:_
+      ```sql
+      WITH temp_table AS (
+        SELECT column1, column2 FROM original_table WHERE condition
+      )
+      SELECT * FROM temp_table;
+      ```
+````
