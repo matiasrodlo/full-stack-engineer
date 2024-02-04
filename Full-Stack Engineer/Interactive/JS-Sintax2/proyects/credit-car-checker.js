@@ -38,44 +38,53 @@ const batch = [
   mystery5,
 ];
 
-// Add your functions below:
+let valid = [valid1, valid2, valid3, valid4, valid5];
+let invalid = [invalid1, invalid2, invalid3, invalid4, invalid5];
 
-function validateCred(batch) {
-  const validCards = [valid1, valid2, valid3, valid4, valid5];
-
-  for (let i = 0; i < batch.length; i++) {
-    let isValid = false;
-
-    for (let j = 0; j < validCards.length; j++) {
-      if (arraysAreEqual(batch[i], validCards[j])) {
-        isValid = true;
-        break;
-      }
-    }
-
-    if (!isValid) {
-      return false;
+function validateCred(array) {
+  for (let i = 0; i < valid.length; i++) {
+    if (JSON.stringify(valid[i]) === JSON.stringify(array)) {
+      return true;
     }
   }
-
-  return true;
+  return false;
 }
 
-// Helper function to check if two arrays are equal
-function arraysAreEqual(arr1, arr2) {
-  if (arr1.length !== arr2.length) {
-    return false;
-  }
+function findInvalidCards(cardsArray) {
+  let listInvalid = [];
 
-  for (let i = 0; i < arr1.length; i++) {
-    if (arr1[i] !== arr2[i]) {
-      return false;
+  for (let i = 0; i < cardsArray.length; i++) {
+    let currentCard = cardsArray[i];
+
+    // Check if the current card is invalid
+    if (!validateCred(currentCard)) {
+      listInvalid.push(currentCard);
     }
   }
 
-  return true;
+  return listInvalid;
 }
 
-// Example usage:
-const isValid = validateCred(batch);
-console.log(isValid);
+function idInvalidCardCompanies(listInvalid) {
+  // Check if the first digit of the card number matches a known company
+  let firstDigit = listInvalid[0];
+
+  if (firstDigit === 3) {
+    return "Amex (American Express)";
+  } else if (firstDigit === 4) {
+    return "Visa";
+  } else if (firstDigit === 5) {
+    return "Mastercard";
+  } else if (firstDigit === 6) {
+    return "Discover";
+  } else {
+    return "Company not found";
+  }
+}
+
+validateCred([4, 9, 2, 9, 8, 7, 7, 1, 6, 9, 2, 1, 7, 0, 9, 3]);
+findInvalidCards([3, 4, 4, 8, 0, 1, 9, 6, 8, 3, 0, 5, 4, 1, 4]);
+
+idInvalidCardCompanies(
+  findInvalidCards([3, 4, 4, 8, 0, 1, 9, 6, 8, 3, 0, 5, 4, 1, 4])
+);
