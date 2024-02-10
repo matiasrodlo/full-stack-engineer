@@ -96,3 +96,14 @@ describe('+', () => {
     assert.deepEqual(sum, expected);
   });
 });
+
+//Other assert methods
+
+const assert = require('assert');
+
+describe('Numbers', () => {
+  it('1 does not equal 2', () => {
+    // Verify
+    assert.notEqual(1, 2);
+  });
+});
