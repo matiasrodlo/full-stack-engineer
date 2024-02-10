@@ -22,3 +22,26 @@ describe('Math', () => {
     });
   });
 });
+
+/* Install Mocha (package.json)
+ 
+
+{
+    "name": "learn-mocha-learn-mocha-install-mocha-ii",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+        "test": "mocha"
+  
+    },
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+      "mocha": "^4.0.1"
+    }
+  
+  }
+  
+  */
