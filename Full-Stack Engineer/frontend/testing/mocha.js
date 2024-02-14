@@ -239,3 +239,17 @@ describe('Calculate', () => {
     
   });
 });
+
+// Red to Green II
+
+const Calculate = {
+	sum(inputArray) {
+    let total = 0;
+    for (const num of inputArray) {
+      total += num;
+    }
+		return total;
+	}
+}
+
+module.exports = Calculate;
