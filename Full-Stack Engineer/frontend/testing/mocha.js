@@ -183,3 +183,12 @@ describe('appendFileSync', () => {
   
  });
 });
+
+// Red To Green I
+
+const Calculate = {
+  sum(arr){
+    return 6
+  }
+}
+module.exports = Calculate;
