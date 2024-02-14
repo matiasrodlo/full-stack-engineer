@@ -253,3 +253,13 @@ const Calculate = {
 }
 
 module.exports = Calculate;
+
+// Refactor II
+
+const Calculate = {
+  sum(inputArray) {
+    return inputArray.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+  },
+};
+
+module.exports = Calculate;
