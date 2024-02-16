@@ -1,7 +1,0 @@
----
-# Our first YAML document
-human: trainer
-animals:
-  elephant: circus
-  horse: rodeo
-…
