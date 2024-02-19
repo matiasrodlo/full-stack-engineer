@@ -15,3 +15,19 @@ $ echo "burger, salad, and sandwich" > lunch
 $ cat lunch
 burger, salad, and sandwich
 $ rm lunch
+
+Directory Operations
+Directories give a hierarchy to files and therefore learning commands for their manipulation is important as well:
+
+New empty directories can be created using the mkdir command. This can also create directories within existing directories, called sub-directories.
+Again, the contents of a directory can be listed using the ls command.
+A directory can be deleted using the rm command with the -r recursive flag to also delete any files it may contain.
+
+$ mkdir dinner
+$ mkdir dinner/entree
+$ mkdir dinner/dessert
+$ touch dinner/entree/turkey
+$ touch dinner/entree/fish
+$ touch dinner/dessert/cake
+$ touch dinner/dessert/pudding
+$ rm -r dinner
