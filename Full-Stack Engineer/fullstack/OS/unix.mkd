@@ -1,0 +1,17 @@
+File Operations
+
+A file can be manipulated in a variety of ways. In fact, Unix built upon this to create an operating system where everything is treated as a file. Therefore learning some simple command line file operations is crucial:
+
+New empty files are commonly created using the touch command.
+The contents of a directory can be listed using the ls command. (Be sure to type a lowercase “L” as in “list” and not the number 1.)
+A string of text can be output to the terminal using the echo command. This is useful in coordination with the > operator that redirects the text output to a file.
+A file can be output and read using the cat command.
+A file can be deleted using the rm command.
+
+$ touch lunch
+$ ls
+lunch  _test.py
+$ echo "burger, salad, and sandwich" > lunch
+$ cat lunch
+burger, salad, and sandwich
+$ rm lunch
