@@ -1,100 +1,74 @@
-class Media {
-    constructor(title) {
-      this._title = title;
-      this._isCheckOut = false;
-      this._ratings = [];
+class School {
+    constructor(name, level, numberOfStudents) {
+      this._name = name;
+      this._level = level;
+      this._numberOfStudents = numberOfStudents;
     }
   
-    get title() {
-      return this._title;
+    get name() {
+      return this._name;
     }
   
-    get isCheckOut() {
-      return this._isCheckOut;
+    get level() {
+      return this._level;
     }
   
-    get ratings() {
-      return this._ratings;
+    get numberOfStudents() {
+      return this._numberOfStudents;
     }
   
-    set isCheckOut(value) {
-      this._isCheckOut = value;
-    }
-  
-    toggleCheckOutStatus() {
-      this._isCheckOut = !this._isCheckOut;
-    }
-  
-    getAverageRating() {
-      if (this._ratings.length === 0) {
-        return 'No ratings yet.';
+    set numberOfStudents(value) {
+      if (typeof value === number) {
+        this._myProperty = value;
+      } else {
+        console.log("Invalid input: numberOfStudents must be set to a Number.");
       }
+    }
   
-      let ratingsSum = this._ratings.reduce(
-        (currentSum, rating) => currentSum + rating,
-        0
+    quickFacts() {
+      console.log(
+        `${this._name} educates ${this._numberOfStudents} at the ${this._level} school level`
       );
-  
-      return ratingsSum / this._ratings.length;
     }
   
-    addRating(value) {
-      this._ratings.push(value);
+    static pickSubstituteTeacher(substituteTeachers) {
+      const randomIndex = Math.floor(Math.random() * substituteTeachers.length);
+      return substituteTeachers[randomIndex];
+    }
+  }
+  // primary
+  
+  class Primary extends School {
+    constructor(name, numberOfStudents, pickupPolicy) {
+      super(name, "primary", numberOfStudents);
+      this._pickupPolicy = pickupPolicy;
+    }
+  
+    get pickupPolicy() {
+      return this._pickupPolicy;
     }
   }
   
-  class Book extends Media {
-    constructor(author, title, pages) {
-      super(title);
-      this._author = author;
-      this._pages = pages;
+   // High School
+  
+  class HighSchool extends School {
+    constructor(name, numberOfStudents, sportsTeams) {
+      super(name, "HighSchool", numberOfStudents);
+      this._sportsTeams = sportsTeams;
     }
   
-    get author() {
-      return this._author;
-    }
-  
-    get pages() {
-      return this._pages;
+    get sportsTeams() {
+      console.log(this._sportsTeams);
     }
   }
   
-  class Movie extends Media {
-    constructor(director, title, runTime) {
-      super(title);
-      this._director = director;
-      this._runTime = runTime;
-    }
+  const lorraineHansbury = new  Primary('Lorraine Hansbury', 514, 'Students must be picked up by a parent, guardian, or a family member over the age of 13.')
   
-    get director() {
-      return this._director;
-    }
+  lorraineHansbury.quickFacts()
   
-    get runTime() {
-      return this._runTime;
-    }
-  }
+  School.pickSubstituteTeacher(['Jamal Crawford', 'Lou Williams', 'J. R. Smith', 'James Harden', 'Jason Terry', 'Manu Ginobli'])
   
-  const historyOfEverything = new Book('Bill Bryson', 'A Short History of Nearly Everything', 544);
+  const alSmith = new  HighSchool('Al E. Smith', 415, ['Baseball', 'Basketball', 'Volleyball', 'Track and Field'])
   
-  historyOfEverything.toggleCheckOutStatus();
+  alSmith.sportsTeams
   
-  console.log(historyOfEverything.isCheckOut);
-  
-  historyOfEverything.addRating(4);
-  historyOfEverything.addRating(4);
-  historyOfEverything.addRating(5);
-  
-  console.log(historyOfEverything.getAverageRating());
-  
-  const speed = new Movie('Jan de Bont', 'Speed', 116);
-  
-  speed.toggleCheckOutStatus();
-  
-  console.log(speed.isCheckOut);
-  
-  speed.addRating(4);
-  speed.addRating(4);
-  speed.addRating(5);
-  
-  console.log(speed.getAverageRating());
