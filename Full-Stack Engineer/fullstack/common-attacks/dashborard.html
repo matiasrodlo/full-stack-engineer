@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Dashboard</title>
+  </head>
+    <h1> Welcome to the User Dashboard! </h1>
+    
+    <form>
+      <label for="fname">First Name:</label>
+      <input type="text" id="fname" name="fname"><br><br>
+      <label for="hobby">Hobby:</label>
+      <input type="text" id="hobby" name="hobby"><br><br>
+    </form>
+
+    <h2 id="greeting"></h2>
+    <p id="message"></p>
+    <button onclick="say_hello()">Receive Your Greeting!</button>
+
+    <script>
+      function say_hello(){
+        var name = document.getElementById("fname").value;
+        var greeting = document.getElementById("greeting");
+        console.log(greeting);
+        // What are we editing here?
+        greeting.innerHTML = "Hello " + name + "!";
+
+        var hobby = document.getElementById("hobby").value;
+        var message = document.getElementById("message"); 
+        // What are we editing here?
+        message.outerHTML = "Nice to meet you! We also love " + hobby + "!";
+      }
+    </script>
+  <body>
+  </body>
+</html>
