@@ -70,3 +70,28 @@ CREATE TABLE author (
   bio varchar(100),
   email varchar(20) PRIMARY KEY
 );
+
+////////////////////////
+// Key Validation///////
+////////////////////////
+
+SELECT
+  constraint_name, table_name, column_name
+FROM
+  information_schema.key_column_usage
+WHERE
+  table_name = 'book';
+
+  SELECT
+  constraint_name, table_name, column_name
+FROM
+  information_schema.key_column_usage
+WHERE
+  table_name = 'chapter';
+
+    SELECT
+  constraint_name, table_name, column_name
+FROM
+  information_schema.key_column_usage
+WHERE
+  table_name = 'author';
