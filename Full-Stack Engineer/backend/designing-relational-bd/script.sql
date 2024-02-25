@@ -114,3 +114,31 @@ FROM
   information_schema.key_column_usage
 WHERE
   table_name = 'popular_books';
+
+////////////////////////
+//Foreign Key Part 1////
+////////////////////////
+
+CREATE TABLE book (
+  title varchar(100),
+  isbn varchar(50) PRIMARY KEY,
+  pages integer,
+  price money,
+  description varchar(256),
+  publisher varchar(100)
+);
+
+CREATE TABLE chapter (
+  id integer PRIMARY KEY,
+  book_isbn varchar(50) REFERENCES book(isbn),
+  number integer,
+  title varchar(50),
+  content varchar(1024)
+);
+
+SELECT
+  constraint_name, table_name, column_name
+FROM
+  information_schema.key_column_usage
+WHERE
+  table_name = 'chapter';
