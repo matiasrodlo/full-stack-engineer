@@ -207,9 +207,9 @@ FROM book
 JOIN book_details
 ON book.isbn = book_details.book_isbn;
 
-/////////////////////////////
-//One-to-One Relationship////
-////////////////////////////
+//////////////////////////////
+//One-to-Many Relationship////
+//////////////////////////////
 
 CREATE TABLE page (
   id integer PRIMARY KEY,
@@ -305,3 +305,20 @@ JOIN
     page
 ON
     chapter.id = page.chapter_id;
+
+///////////////////////////////
+//Many-to-Many Relationship////
+///////////////////////////////
+
+CREATE TABLE books_authors (
+  book_isbn varchar(50) REFERENCES book(isbn),
+  author_email varchar(20) REFERENCES author(email),
+  PRIMARY KEY (book_isbn, author_email)
+);
+
+SELECT
+  constraint_name, table_name, column_name
+FROM
+  information_schema.key_column_usage
+WHERE
+  table_name = 'books_authors';
