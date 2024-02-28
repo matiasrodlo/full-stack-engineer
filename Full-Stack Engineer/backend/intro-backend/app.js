@@ -235,3 +235,20 @@ let readDataCallback = (err, data) => {
 fs.readFile('./finalFile.txt', 'utf-8', readDataCallback);
 
 secretWord = "cheeseburgerpizzabagels"
+
+///////////////////////////////////////////////////////
+//Readable Streams/////////////////////////////////////
+//////////////////////////////////////////////////////
+
+const readline = require('readline');
+const fs = require('fs');
+
+const myInterface = readline.createInterface({
+  input: fs.createReadStream('shoppingList.txt')
+});
+
+const printData = (data) => {
+  console.log(`Item: ${data}`);
+};
+
+myInterface.on('line', printData);
