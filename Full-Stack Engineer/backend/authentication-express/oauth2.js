@@ -63,3 +63,21 @@ app.get('/secret', (req, res)=>{
 })
 
 app.listen(PORT, ()=>console.log(`Listening on port ${PORT}`));
+
+/////////////////////////////////////////////////////
+//Registering Client to Application/////////////////
+////////////////////////////////////////////////////
+
+
+module.exports = {
+    confidentialClients: [{
+      clientId: 'codecademy',
+      clientSecret: 'codec@demy',
+      grants: [
+        'client_credentials'
+      ]
+    }],
+      tokens: []
+  
+  }
+  
