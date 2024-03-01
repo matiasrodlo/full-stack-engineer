@@ -654,3 +654,22 @@ app.post("/register", async (req, res) => {
 app.listen(PORT, () => {
   console.log(`Server is listening on port ${PORT}`);
 });
+
+/////////////////////////////////////////////////////
+//Logout//////////////////////////////
+////////////////////////////////////////////////////
+
+const bcrypt = require("bcrypt");
+
+// Create password hashing function below:
+const passwordHash = async (password, saltRounds) => {
+  try {
+    const salt = await bcrypt.genSalt(saltRounds);
+    const hash = await bcrypt.hash(password, salt);
+  return hash
+  } catch (err) {
+    console.log(err)
+  }
+    return null;
+
+};
