@@ -656,7 +656,7 @@ app.listen(PORT, () => {
 });
 
 /////////////////////////////////////////////////////
-//Logout//////////////////////////////
+//bcrypt////////////////////////////////////////////
 ////////////////////////////////////////////////////
 
 const bcrypt = require("bcrypt");
@@ -672,4 +672,22 @@ const passwordHash = async (password, saltRounds) => {
   }
     return null;
 
+};
+
+/////////////////////////////////////////////////////
+//Verifying Passwords///////////////////////////////
+////////////////////////////////////////////////////
+
+const bcrypt = require("bcrypt");
+
+// Create your password comparison function below:
+
+const comparePasswords = async (password, hash) => {
+  try {
+    const matchFound = await bcrypt.compare(password, hash);
+    return matchFound;
+  } catch (err) {
+    console.log(err);
+  }
+  return false;
 };
