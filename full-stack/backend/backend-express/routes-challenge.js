@@ -34,3 +34,120 @@ app.get('/sausages', (req, res, next) => {
 
 ////////////////////////////////////////////////////////////////////////
 
+const express = require('express');
+const app = express();
+
+const PORT = process.env.PORT || 4001;
+
+const buildingMaterials = {
+  wood: ['plywood', '2x4s', 'cedar shingles'],
+  metal: ['steel girders', 'wall studs', 'rebar'],
+};
+
+app.listen(PORT, () => {
+  console.log(`Server is listening on port ${PORT}`);
+});
+
+app.get('/metals', (req, res, next) => {
+    res.send(buildingMaterials.metal);
+});
+
+/////////////////////////////////////////////////////////////////////////
+
+const express = require('express');
+const app = express();
+
+const PORT = process.env.PORT || 4001;
+
+const battlefields = {
+  fortSumter: {
+    state: 'SC',
+  },
+  manassas: {
+    state: 'VA',
+  },
+  gettysburg: {
+    state: 'PA',
+  },
+  antietam: {
+    state: 'MD',
+  }
+}
+
+app.listen(PORT, () => {
+  console.log(`Server is listening on port ${PORT}`);
+});
+
+app.get('/battlefields/:name', (req, res, next) => {
+  const battlefieldName = req.params.name;
+    if (battlefieldName !== -1) {
+    battlefields.splice(battlefieldName, 1);
+    res.status(204).send();
+  } else {
+    res.status(404).send();
+  }
+});
+
+//////////////////////////////////////////////////////////////////////////
+
+const express = require('express');
+const app = express();
+
+const PORT = process.env.PORT || 4001;
+
+const currencies = {
+  diram: {
+    countries: ['UAE', 'Morocco'],
+  },
+  real: {
+    countries: ['Brazil'],
+  },
+  dinar: {
+    countries: ['Algeria', 'Bahrain', 'Jordan', 'Kuwait'],
+  },
+  vatu: {
+    countries: ['Vanuatu'],
+  },
+  shilling: {
+    countries: ['Tanzania', 'Uganda', 'Somalia', 'Kenya'],
+  },
+};
+
+// Update an expression
+currenciesRouter.put('/currencies/:name/countries', (req, res, next) => {
+  const currenciesIndex = getIndexById(req.params.id, currencies);
+  if (currenciesIndex !== -1) {
+    updateElement(req.params.id, req.query, currencies);
+    res.send(currencies[currenciesIndex]);
+  } else {
+    res.status(404).send();
+  }
+});
+
+app.listen(PORT, () => {
+  console.log(`Server is listening on port ${PORT}`);
+});
+
+
+///////////////////////////////////////////////////////////////////////////////
+
+const express = require('express');
+const app = express();
+
+const PORT = process.env.PORT || 4001;
+
+const soups = ['gazpacho', 'borscht', 'primordial', 'avgolemono', 'laksa'];
+
+app.listen(PORT, () => {
+  console.log(`Server is listening on port ${PORT}`);
+});
+
+soupsRouter.put('/soups', (req, res, next) => {
+  const receivedSoups = createElement('soups', req.query);
+  if (receivedSoups) {
+    soups.push(receivedSoups);
+    res.status(201).send(receivedSoups);
+  } else {
+    res.status(400).send();
+  }
+});
