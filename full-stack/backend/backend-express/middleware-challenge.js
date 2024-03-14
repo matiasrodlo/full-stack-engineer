@@ -124,7 +124,6 @@ app.get('/say-bye', (req, res, next) => {
 //EXPRESS MIDDLEWARE CODE CHALLENGES 6 ////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////
 
-
 const express = require('express');
 const app = express();
 
@@ -161,3 +160,107 @@ app.delete('/data/:index', (req, res, next) => {
 app.get('/', (req, res, next) => {
   res.send(data);
 });
+
+///////////////////////////////////////////////////////////////////////////
+//EXPRESS MIDDLEWARE CODE CHALLENGES 7 ////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////
+
+const express = require('express');
+const app = express();
+
+const cors = require('cors');
+
+app.use(cors());
+
+///////////////////////////////////////////////////////////////////////////
+//EXPRESS MIDDLEWARE CODE CHALLENGES 8 ////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////
+
+const express = require('express');
+const app = express();
+
+const secretData = {
+  adminUsers: ['1', '2', '51'],
+  coolPhoneNumbers: ['555-555-CODE', '555-EXP-RESS', 'MID-DLE-WARE'],
+  favSites: ['codecademy.com', 'expressjs.com']
+}
+
+const publicData = {
+  colors: ['green', 'orange'],
+  numbers: [1, 2, 3, 4, 5]
+}
+
+const isAdmin = (req, res, next) => {
+  const id = req.params.userId;
+  if (!secretData.adminUsers.includes(id)) {
+    res.status(401).send(); // Unauthorized
+  } else {
+    next();
+  }
+}
+app.use(['/:userId/phone-numbers', '/:userId/fav-sites'], isAdmin);
+
+app.get('/:userId/colors', (req, res, next) => {
+  res.send(publicData.colors);
+});
+
+app.get('/:userId/numbers', (req, res, next) => {
+  res.send(publicData.numbers);
+});
+
+app.get('/:userId/phone-numbers', (req, res, next) => {
+  res.send(secretData.coolPhoneNumbers);
+});
+
+app.get('/:userId/fav-sites', (req, res, next) => {
+  res.send(secretData.favSites);
+});
+
+///////////////////////////////////////////////////////////////////////////
+//EXPRESS MIDDLEWARE CODE CHALLENGES 9 ////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////
+
+const express = require('express');
+const appleRouter = express.Router();
+
+const apples = {
+  mcintosh: {
+    description: 'Classic, juicy, bright',
+    priceRange: 'medium',
+    color: 'green and red'
+  },
+  honeycrisp: {
+    description: 'Crisp, sweet!',
+    priceRange: 'pricey',
+    color: 'red and yellow'
+  },
+  goldenDelicious: {
+    description: 'rich, custardy',
+    priceRange: 'cheap',
+    color: 'yellow'
+  }
+}
+
+// Finish the appleRouter.param call:
+
+appleRouter.param('variety', (req, res, next, variety) => {
+  if (!apples[variety]) {
+    res.status(404).send();
+  } else {
+    req.variety = apples[variety];
+    next();
+  }
+});
+
+appleRouter.get('/:variety/description', (req, res, next) => {
+  res.send(req.variety.description);
+});
+
+appleRouter.get('/:variety/price-range', (req, res, next) => {
+  res.send(req.variety.priceRange);
+});
+
+appleRouter.get('/:variety/color', (req, res, next) => {
+  res.send(req.variety.color);
+});
+
