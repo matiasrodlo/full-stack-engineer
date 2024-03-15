@@ -134,3 +134,19 @@ const server = http.createServer((req, res) => {
 server.listen(port, () => {
 	console.log(`Server running at http://${hostname}:${port}/`);
 });
+
+/////////////////////////////////////////////////////////////////////////////
+//Strict Mode///////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+
+// Add strict mode below
+"use strict";
+
+function printNames(names) {
+    console.log(`The ${names.length > 1 ? "names are" : "name is"} ${names.join(", ")}.`);
+}
+
+const ourNames = ["Amelia", "Ethan", "Ava", "Mia"];
+printNames(ourNames);
+
+const companyName = "Codecademy";
