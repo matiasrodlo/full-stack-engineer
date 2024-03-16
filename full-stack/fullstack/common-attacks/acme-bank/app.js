@@ -2,7 +2,11 @@ const sqlite3 = require("sqlite3");
 const express = require("express");
 const session = require("express-session");
 const path = require("path");
+const helmet = require("helmet");
+const validator = require("express-validator")
 const fs = require("fs");
+const csurf = require("csurf");
+const cookieParser = require("cookie-parser");
 
 const db = new sqlite3.Database("./bank_sample.db");
 
@@ -10,7 +14,8 @@ const app = express();
 const PORT = 3000;
 app.set("view engine", "ejs");
 app.use(express.static(path.join(__dirname, "public")));
-
+app.use(helmet());
+ 
 app.use(
   session({
     secret: "secret",
@@ -21,6 +26,22 @@ app.use(
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(cookieParser());
+
+const csrfMiddleware = csurf({
+  cookie: {
+    sameSite: 'none',
+  },
+});
+
+app.use((error, request, response, next) => {
+  if (error.code == "EBADCSRFTOKEN") {
+    response.status(403);
+    response.send("the token was invalid");
+  } else {
+    next();
+  }
+})
 
 app.get("/", function (request, response) {
   response.sendFile(path.join(__dirname + "/html/login.html"));
@@ -32,7 +53,7 @@ app.post("/auth", function (request, response) {
   var password = request.body.password;
   if (username && password) {
     db.get(
-      `SELECT * FROM users WHERE username = '${request.body.username}' AND password = '${request.body.password}'`,
+      `SELECT * FROM users WHERE username = ? AND password = ?`, [username,]
       function (error, results) {
         console.log(error);
         console.log(results);
@@ -68,17 +89,17 @@ app.get("/home", function (request, response) {
 });
 
 //CSRF CODE SECURED. SEE HEADERS SET ABOVE
-app.get("/transfer", function (request, response) {
+app.get("/transfer", csrfMiddleware, function (request, response) {
   if (request.session.loggedin) {
     var sent = "";
-    response.render("transfer", { sent });
+    response.render("transfer", { sent, csrfToken: request.csrfToken() });
   } else {
     response.redirect("/");
   }
 });
 
 //CSRF CODE
-app.post("/transfer", function (request, response) {
+app.post("/transfer", csrfMiddleware, function (request, response) {
   if (request.session.loggedin) {
     console.log("Transfer in progress");
     var balance = request.session.balance;
@@ -133,11 +154,19 @@ app.post("/download", function (request, response) {
     response.setHeader("Content-Type", "text/html");
 
     // Change the filePath to current working directory using the "path" method
-    const filePath = "history_files/" + file_name;
-    console.log(filePath);
+  const rootDirectory = "history_files\\"
+   const filePath = path.join(process.cwd() + '/history_files/', file_name)
+  const filename = path.normalize(filePath);
+   console.log(filePath);
     try {
-      content = fs.readFileSync(filePath, "utf8");
-      response.end(content);
+      if(filename.indexOf(rootDirectory) < 0) 
+      {
+        response.end("File not found!")
+      } else {
+        content = fs.readFileSync(filePath, "utf8");
+        response.end(content);
+      }
+
     } catch (err) {
       console.log(err);
       response.end("File not found");
@@ -164,11 +193,11 @@ app.get("/public_forum", function (request, response) {
 
 app.post("/public_forum", function (request, response) {
   if (request.session.loggedin) {
-    var comment = request.body.comment;
+    var comment = validator.escape(request.body.comment);
     var username = request.session.username;
     if (comment) {
       db.all(
-        `INSERT INTO public_forum (username,message) VALUES ('${username}','${comment}')`,
+        `INSERT INTO public_forum (username,message) VALUES (?, ?)`, [username, comment],
         (err, rows) => {
           console.log(err);
         }
@@ -196,10 +225,10 @@ app.post("/public_forum", function (request, response) {
 //SQL UNION INJECTION
 app.get("/public_ledger", function (request, response) {
   if (request.session.loggedin) {
-    var id = request.query.id;
+    var id = parseInt(request.query.id);
     if (id) {
       db.all(
-        `SELECT * FROM public_ledger WHERE from_account = '${id}'`,
+        `SELECT * FROM public_ledger WHERE from_account = ?`, [id],
         (err, rows) => {
           console.log("PROCESSING INPU");
           console.log(err);
