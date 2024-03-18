@@ -102,3 +102,11 @@ WHERE order_id = 1234;
 SELECT *
 FROM orders
 ORDER BY order_id;
+
+-- Removing Triggers
+
+SELECT * FROM information_schema.triggers;
+
+DROP TRIGGER im_a_bad_trigger ON orders;
+
+SELECT * FROM information_schema.triggers;
