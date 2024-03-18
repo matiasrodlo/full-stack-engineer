@@ -186,3 +186,51 @@ VALUES
   ('HS', 6, 15.95),
   ('HS', 7, 16.95),
   ('HS', 8, 17.95);
+
+SELECT r.name AS restaurant_name, a.street || ', ' || a.city || ', ' || a.state AS address, r.phone
+FROM restaurant r
+JOIN address a ON r.id = a.restaurant_id;
+
+SELECT MAX(rating) AS best_rating
+FROM review;
+
+SELECT d.name AS dish_name, cd.price, c.name AS category
+FROM dish d
+JOIN categories_dishes cd ON d.id = cd.dish_id
+JOIN category c ON cd.category_id = c.id
+ORDER BY d.name;
+
+SELECT c.name AS category, d.name AS dish_name, cd.price
+FROM dish d
+JOIN categories_dishes cd ON d.id = cd.dish_id
+JOIN category c ON cd.category_id = c.id
+ORDER BY c.name;
+
+SELECT d.name AS spicy_dish_name, c.name AS category, cd.price
+FROM dish d
+JOIN categories_dishes cd ON d.id = cd.dish_id
+JOIN category c ON cd.category_id = c.id
+WHERE d.hot_and_spicy = TRUE;
+
+SELECT dish_id, COUNT(dish_id) AS dish_count
+FROM categories_dishes
+GROUP BY dish_id
+HAVING COUNT(dish_id) > 1;
+
+SELECT dish_id, COUNT(dish_id) AS dish_count
+FROM categories_dishes
+GROUP BY dish_id
+HAVING COUNT(dish_id) > 1;
+
+SELECT d.name AS dish_name, COUNT(cd.dish_id) AS dish_count
+FROM categories_dishes cd
+JOIN dish d ON cd.dish_id = d.id
+GROUP BY d.name
+HAVING COUNT(cd.dish_id) > 1;
+
+SELECT rating AS best_rating, description
+FROM review
+WHERE rating = (
+    SELECT MAX(rating) 
+    FROM review
+);
