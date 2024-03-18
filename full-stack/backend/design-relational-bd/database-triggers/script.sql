@@ -38,3 +38,17 @@ WHERE customer_id = 1;
 SELECT * FROM customers ORDER BY customer_id;
 
 SELECT * FROM customers_log;
+
+--What Records are modified by a Trigger?
+
+SELECT * FROM customers;
+
+CREATE TRIGGER each_statement_trigger
+  AFTER UPDATE ON customers
+  FOR EACH STATEMENT
+  EXECUTE PROCEDURE statement_function();
+
+UPDATE customers
+SET years_old = years_old + 1;
+
+SELECT * FROM customers;
