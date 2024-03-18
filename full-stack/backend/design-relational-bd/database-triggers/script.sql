@@ -110,3 +110,9 @@ SELECT * FROM information_schema.triggers;
 DROP TRIGGER im_a_bad_trigger ON orders;
 
 SELECT * FROM information_schema.triggers;
+
+-- review 
+CREATE TRIGGER customers_log
+    BEFORE UPDATE ON customers
+    FOR EACH ROW
+    EXECUTE PROCEDURE function_1();
