@@ -43,3 +43,8 @@ WHERE organization IS NULL;
 
 ALTER TABLE speakers 
 ALTER COLUMN organization SET NOT NULL;
+
+-- CHECK
+
+ALTER TABLE speakers
+ADD CHECK (years_in_role < 100);
