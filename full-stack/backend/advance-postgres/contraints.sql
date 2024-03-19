@@ -31,3 +31,15 @@ create table speakers (
 
 INSERT INTO speakers (id, email, name, organization, title, years_in_role)
 VALUES (1, 'awilson@ABCcorp.com', 'A. Wilson', 'ABC Corp.', 'CTO', 6);
+
+-- Improving Tables with Constraints
+
+ALTER TABLE speakers 
+ALTER COLUMN name SET NOT NULL;
+
+UPDATE speakers
+SET organization = 'Unaffiliated'
+WHERE organization IS NULL;
+
+ALTER TABLE speakers 
+ALTER COLUMN organization SET NOT NULL;
