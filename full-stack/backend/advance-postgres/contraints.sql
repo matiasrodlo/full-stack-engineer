@@ -69,3 +69,11 @@ CREATE TABLE registrations (
     talk_id  integer NOT NULL,
     UNIQUE (session_timeslot, attendee_id)
 );
+
+-- primary keys
+
+ALTER TABLE speakers
+ADD PRIMARY KEY (id);
+
+INSERT INTO speakers (email, name, organization, title, years_in_role, id)
+VALUES ('J.Saunders@ABCTech.com', 'Joan Saunders', 'ABC Tech.', 'Sr. Data Scientist', 6, 100);
