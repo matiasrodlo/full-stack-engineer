@@ -51,9 +51,21 @@ ADD CHECK (years_in_role < 100);
 
 -- Check Constraints Continued
 
-
 ALTER TABLE speakers 
 ADD CHECK (years_in_role < 100 AND years_in_role > 0);
 
 ALTER TABLE attendees 
 ADD CHECK (standard_tickets_reserved + vip_tickets_reserved = total_tickets_reserved);
+
+-- Using Unique Constraints
+
+ALTER TABLE speakers
+ADD UNIQUE (email);
+
+CREATE TABLE registrations (
+    id integer NOT NULL,
+    attendee_id integer NOT NULL,
+    session_timeslot timestamp NOT NULL,
+    talk_id  integer NOT NULL,
+    UNIQUE (session_timeslot, attendee_id)
+);
