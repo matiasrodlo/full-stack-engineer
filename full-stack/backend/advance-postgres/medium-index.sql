@@ -39,3 +39,9 @@ ALTER TABLE customers ADD PRIMARY KEY (customer_id);
 SELECT *
 FROM pg_Indexes
 WHERE tablename = 'customers';
+
+-- clustered index
+
+CLUSTER customers USING customers_last_name_idx;
+
+CLUSTER customers
