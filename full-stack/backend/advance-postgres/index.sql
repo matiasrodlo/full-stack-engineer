@@ -48,3 +48,14 @@ DROP INDEX customers_last_name_idx;
 SELECT *
 FROM pg_Indexes
 WHERE tablename = 'customers';
+
+-- Why not Index every Column?
+
+DROP INDEX IF EXISTS customers_bad_idx;
+
+
+SELECT NOW();
+
+\COPY customers FROM 'customers.txt' DELIMITER ',' CSV HEADER;
+
+SELECT NOW();
