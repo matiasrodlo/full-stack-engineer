@@ -36,3 +36,15 @@ EXPLAIN ANALYZE SELECT *
 FROM customers
 WHERE last_name= 'Jones'
      AND first_name= 'David';
+
+-- Drop an Index
+
+SELECT *
+FROM pg_Indexes
+WHERE tablename = 'customers';
+
+DROP INDEX customers_last_name_idx;
+
+SELECT *
+FROM pg_Indexes
+WHERE tablename = 'customers';
