@@ -67,3 +67,9 @@ SELECT pg_size_pretty (pg_total_relation_size('customers'));
 CREATE INDEX customers_last_name_idx ON customers(last_name);
 
 SELECT pg_size_pretty (pg_total_relation_size('customers'));
+
+-- When should I add an Index?
+
+CREATE INDEX customers_city_idx ON customers (city);
+
+CREATE INDEX customers_last_name_email_address_first_name_idx ON customers (last_name, email_address, first_name);
