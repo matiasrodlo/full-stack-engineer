@@ -56,6 +56,14 @@ DROP INDEX IF EXISTS customers_bad_idx;
 
 SELECT NOW();
 
-\COPY customers FROM 'customers.txt' DELIMITER ',' CSV HEADER;
+COPY customers FROM 'customers.txt' DELIMITER ',' CSV HEADER;
 
 SELECT NOW();
+
+-- sizy after index
+
+SELECT pg_size_pretty (pg_total_relation_size('customers'));
+
+CREATE INDEX customers_last_name_idx ON customers(last_name);
+
+SELECT pg_size_pretty (pg_total_relation_size('customers'));
