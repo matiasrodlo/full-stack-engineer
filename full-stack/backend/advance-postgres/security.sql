@@ -27,3 +27,16 @@ CREATE ROLE wilson WITH LOGIN;
 
 SELECT * FROM pg_catalog.pg_roles 
 ORDER BY rolname;
+
+
+-- Modifying Permissions on Existing Schemas and Tables
+
+GRANT CREATE, USAGE ON SCHEMA marketing TO analyst;
+
+GRANT SELECT, INSERT, DELETE ON marketing.prospects TO analyst;
+
+REVOKE DELETE ON marketing.prospects FROM analyst;
+
+SET ROLE analyst;
+
+DELETE FROM marketing.prospects WHERE id = 2;
