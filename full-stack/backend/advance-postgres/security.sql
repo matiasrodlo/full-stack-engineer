@@ -76,3 +76,12 @@ SET ROLE david;
 
 SELECT * 
 FROM cc_user.company_startdates;
+
+-- Column Level Security
+
+GRANT UPDATE (project_name, project_status) 
+ON projects to manager;
+
+select * 
+from information_schema.column_privileges
+where grantee = 'manager';
