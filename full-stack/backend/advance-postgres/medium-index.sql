@@ -79,4 +79,12 @@ CREATE INDEX customers_last_name_first_name_idx ON customers (last_name, first_n
 EXPLAIN ANALYZE SELECT *
 FROM customers
 WHERE last_name = 'Jones'
-  AND first_name = 'Steve';
+AND first_name = 'Steve';
+
+-- Indexes Based On Expressions
+
+CREATE UNIQUE INDEX customers_email_address_lower_unique_idx ON customers(LOWER(email_address));
+
+INSERT INTO customers (first_name, last_name, email_address)
+VALUES ('<first_name1>', '<last_name2>', '<email_address>'),
+('<first_name2>','<last_name2>','<email_address>');
