@@ -21,3 +21,12 @@ WHERE advisor_name='Sommer';
 UPDATE college
 SET advisor_email = 'sophie@college.edu'
 WHERE advisor_name = 'Sommer' AND advisor_department = 'Statistics';
+
+-- Data Insertion Challenges
+
+INSERT INTO college (student_id, advisor_name,advisor_department, advisor_email)
+VALUES ('-1', 'Stern', 'Biology', 'stern111@college.edu');
+
+SELECT *
+FROM college
+WHERE student_id = '-1'
