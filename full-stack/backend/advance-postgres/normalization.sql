@@ -110,3 +110,21 @@ CREATE TABLE students_majors (
   student_id INTEGER REFERENCES students(id),
   major_id INTEGER REFERENCES majors(id)
 );
+
+-- Database Structure and Use
+
+SELECT major, count(*)
+FROM students_majors, majors
+WHERE major_id = id
+GROUP BY major
+ORDER BY count DESC;
+
+UPDATE advisors
+SET email = 'sophie@college.edu'
+WHERE name = 'Sommer';
+
+SELECT student_id, SUM(credits_reqd), MIN(email) as student_email
+FROM students, students_majors, majors
+WHERE students.id = students_majors.student_id
+AND students_majors.major_id = majors.id
+GROUP BY student_id;
