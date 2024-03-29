@@ -27,3 +27,19 @@ WHERE broker_id = 'GE';
 SELECT pg_size_pretty(
   pg_total_relation_size('mock.house_prices')
 );
+
+-- VACUUM
+
+-- 1
+UPDATE mock.stock_prices
+SET price_sh = price_sh + 10.00
+WHERE trading_date > '2020-01-01'::date;
+
+-- 2
+VACUUM mock.stock_prices;
+
+-- 3
+SELECT pg_size_pretty(
+    pg_total_relation_size('mock.stock_prices')
+) as total_size;
+
