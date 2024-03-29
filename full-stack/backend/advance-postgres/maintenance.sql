@@ -50,3 +50,16 @@ SELECT schemaname, relname,
     last_analyze
 FROM pg_stat_all_tables
 WHERE relname = 'orders';
+
+-- Deletes and Table Size
+
+DELETE FROM mock.stock_prices
+WHERE day_id IN (5, 6);
+
+SELECT pg_size_pretty(pg_total_relation_size('mock.stock_prices'))
+
+ANALYZE mock.stock_prices;
+
+SELECT relname, n_dead_tup 
+FROM pg_stat_all_tables 
+WHERE relname = mock.stock_prices;
