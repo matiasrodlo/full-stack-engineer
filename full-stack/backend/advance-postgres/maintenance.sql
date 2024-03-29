@@ -30,16 +30,23 @@ SELECT pg_size_pretty(
 
 -- VACUUM
 
--- 1
 UPDATE mock.stock_prices
 SET price_sh = price_sh + 10.00
 WHERE trading_date > '2020-01-01'::date;
 
--- 2
 VACUUM mock.stock_prices;
 
--- 3
 SELECT pg_size_pretty(
     pg_total_relation_size('mock.stock_prices')
 ) as total_size;
 
+-- Analyze and Autovacuum
+
+analyze mock.orders;
+
+SELECT schemaname, relname, 
+    last_vacuum,
+    last_autovacuum, 
+    last_analyze
+FROM pg_stat_all_tables
+WHERE relname = 'orders';
