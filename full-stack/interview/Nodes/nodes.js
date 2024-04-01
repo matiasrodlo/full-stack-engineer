@@ -286,3 +286,27 @@ seasons.printList()
 
 seasons.removeHead()
 seasons.printList()
+
+// Two Pointers Moving in Parallel
+
+const nthLastNode = (linkedList, n) => {
+  let pointer1 = linkedList.head;
+  let pointer2 = linkedList.head;
+
+  // Move pointer2 n nodes ahead
+  for (let i = 0; i < n; i++) {
+    if (pointer2 === null) {
+      return null; // List is shorter than n elements
+    }
+    pointer2 = pointer2.getNextNode();
+  }
+
+  // Move both pointers until pointer2 reaches the end
+  while (pointer2 !== null) {
+    pointer1 = pointer1.getNextNode();
+    pointer2 = pointer2.getNextNode();
+  }
+
+  // Pointer1 is now at the nth last node
+  return pointer1;
+};
