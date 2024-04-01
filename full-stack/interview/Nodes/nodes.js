@@ -118,4 +118,23 @@ class Node {
   }
   
   module.exports = Node;
+
+  // Constructor and Adding to Head
+
+  const Node = require("./Node");
+
+class LinkedList {
+  constructor() {
+    this.head = null;
+  }
+
+  addToHead(data) {
+    const newHead = new Node(data);
+    const currentHead = this.head;
+    this.head = newHead;
+  }
+}
+
+module.exports = LinkedList;
+
   
