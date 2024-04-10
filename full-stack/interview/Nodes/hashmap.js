@@ -230,3 +230,16 @@ class HashMap {
 }
 
 module.exports = HashMap;
+
+// collisions retrieving
+
+while (current) {
+    if (current.data.key === key) {
+      current.data = { key, value };
+    }
+    if (!current.next) {
+      current.next = new Node({ key, value });
+      break;
+    }
+    current = current.next;
+  }
