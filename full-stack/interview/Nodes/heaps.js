@@ -24,3 +24,17 @@ for (let i = 0; i < 6; i++) {
 
 // MinHeap Class
 
+class MinHeap {
+    constructor() {
+      this.heap = [null];
+      this.size = 0;
+    }
+  }
+  module.exports = MinHeap;
+
+// Script.js
+
+const MinHeap = require('./MinHeap');
+const minHeap = new MinHeap();
+
+console.log(minHeap.heap)
