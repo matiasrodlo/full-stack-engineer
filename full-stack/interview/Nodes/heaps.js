@@ -38,3 +38,33 @@ const MinHeap = require('./MinHeap');
 const minHeap = new MinHeap();
 
 console.log(minHeap.heap)
+
+// Bubble Up Part I
+
+class MinHeap {
+    constructor() {
+      this.heap = [ null ];
+      this.size = 0;
+    }
+    add(value) {
+      this.heap.push(value)
+      this.size++
+      this.bubbleUp()
+    }
+      bubbleUp() {
+      console.log('Bubble Up'); 
+  }
+  }
+  module.exports = MinHeap;
+  
+  // scriptjs
+
+const MinHeap = require('./MinHeap');
+
+// instantiate MinHeap and assign to minHeap
+const minHeap = new MinHeap();
+// call add method
+minHeap.add(42)
+
+// display content of minHeap
+console.log('Content of heap', minHeap.heap);
