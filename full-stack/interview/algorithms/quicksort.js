@@ -11,3 +11,17 @@ for (let i = 0; i < 5; i++) {
 console.log('Before quicksort:', numbers);
 const sorted = quicksort(numbers);
 console.log('After  quicksort:', sorted);
+
+// The Pivot Element
+
+const swap = require('./swap');
+
+/* Define partition() here */
+const partition = (array, leftIndex, rightIndex) => {
+  const pivot = array[Math.floor((rightIndex + leftIndex) / 2)];
+  return pivot;
+}
+
+module.exports = {
+  partition
+};
