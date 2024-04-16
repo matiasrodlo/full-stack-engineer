@@ -51,3 +51,20 @@ const depthFirstTraversal = (start, callback, visitedVertices = [start]) => {
 };
 
 depthFirstTraversal(testGraph.vertices[0], (vertex) => { console.log(vertex.data) });
+
+// Breadth-First Traversal (First layer)
+
+const testGraph = require('./testGraph.js');
+
+const breadthFirstTraversal = (start) => {
+  const visitedVertices = [start];
+  start.edges.forEach(edge => {
+    const neighbor = edge.end;
+    if (!visitedVertices.includes(neighbor)) {
+      visitedVertices.push(neighbor)
+    }
+  });
+  console.log(visitedVertices)
+};
+
+breadthFirstTraversal(testGraph.vertices[0]);
