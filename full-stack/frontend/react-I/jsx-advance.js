@@ -58,3 +58,15 @@ const root = createRoot(container);
 // Write code here:
 const math = (<h1> 2 + 3 = {2 + 3} </h1>);
 root.render(math)
+
+// variable in jsx 
+
+import React from 'react';
+import { createRoot } from 'react-dom/client';
+
+const container = document.getElementById('app');
+const root = createRoot(container);
+
+const theBestString = 'This text was accessed through a javascript variable';
+
+root.render(<h1>{theBestString}</h1>);
