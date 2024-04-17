@@ -52,3 +52,22 @@ import { createRoot } from 'react-dom/client';
 const container = document.getElementById('container');
 const root = createRoot(container);
 root.render(<h1>Hello world</h1>);
+
+// Passing a Variable to render()
+
+import React from "react";
+import { createRoot } from "react-dom/client";
+
+const container = document.getElementById("app");
+const root = createRoot(container);
+
+let myList = (
+  <ul>
+    <li>Learn React</li>
+    <li>Become a Developer</li>
+  </ul>
+);
+
+const container = document.getElementById('app');
+const root = createRoot(container);
+root.render(myList);
