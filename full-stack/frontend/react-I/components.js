@@ -15,3 +15,12 @@ import React from 'react'
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 
+// creating a functional component
+
+import React from 'react';
+
+// Declare a new function component
+
+function MyComponent() {
+  
+}
