@@ -47,3 +47,12 @@ function MyComponent() {
 
 import MyComponent from './App';
 export default MyComponent;
+
+// using and rendering a component
+
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+
+import MyComponent from './App';
+
+ReactDOM.createRoot(document.getElementById('app')).render(<MyComponent />);
