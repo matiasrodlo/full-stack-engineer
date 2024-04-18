@@ -5,3 +5,7 @@ function App() {
 }
 
 export default App;
+
+// import react
+
+import React from 'react'
