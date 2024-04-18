@@ -24,3 +24,13 @@ import React from 'react';
 function MyComponent() {
   
 }
+
+// Name a functional component
+
+import React from 'react';
+
+// Declare a new function component
+
+function MyComponent() {
+  
+}
