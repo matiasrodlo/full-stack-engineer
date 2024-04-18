@@ -42,3 +42,8 @@ import React from 'react';
 function MyComponent() {
   return <h1>Hello world</h1>;
 }
+
+// import and export
+
+import MyComponent from './App';
+export default MyComponent;
