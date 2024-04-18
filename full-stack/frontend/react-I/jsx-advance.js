@@ -214,3 +214,11 @@ const peopleList = people.map((person,i) =>
 
 // root.render goes here:
 root.render(<ul>{peopleList}</ul>);
+
+// without jsx
+
+const greatestDivEver = React.createElement(
+	'div',
+  null,
+  'i am div'
+);
