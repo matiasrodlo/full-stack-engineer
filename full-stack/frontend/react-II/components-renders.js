@@ -185,3 +185,16 @@ function List(props) {
 }
 
 export default List;
+
+// Giving default values to props
+
+import React from 'react';
+
+function Button(props) {
+  const {text = 'Default Text of Big Button'} = props;
+    return (
+      <button>{text}</button>
+    );
+}
+
+export default Button;
