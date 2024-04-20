@@ -87,3 +87,14 @@ function Product(props) {
 }
 
 export default Product;
+
+// Pass props From Component To Component
+
+import React from "react";
+import Player from "./Player";
+
+function App() {
+  return <Player songName="Jasmine" artist="Jasmine" />;
+}
+
+export default App;
