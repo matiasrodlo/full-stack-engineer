@@ -1,10 +1,16 @@
 const express = require("express");
 const app = express();
-
+const dotenv = require("dotenv")
 const mongoose = require("mongoose")
 
-mongoose.connect("mongodb+srv://matias:matias@cluster0.7uizv0n.mongodb.net/?retryWrites=true&w=majority").then(() => console.log("DB Connection Successfull")).catch((err) => {console.log(err);})
+dotenv.config();
 
-app.listen(4000, () => { 
+mongoose.connect(process.env.MONGO_URL).then(() => console.log("DB Connection Successfull")).catch((err) => {console.log(err);})
+
+app.get("/pr", () => {
+    console.log("test is successfull")
+});
+
+app.listen(process.env.PORT || 5000, () => { 
     console.log("backend server is running");
 });
