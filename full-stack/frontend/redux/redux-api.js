@@ -118,3 +118,11 @@ function App({ state, dispatch}) {
 }
 
 export default App;
+
+// slices
+
+const initialState = {
+  allRecipes: [],
+  favoriteRecipes: [],
+  searchTerm: ""
+}
