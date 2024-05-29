@@ -16,73 +16,60 @@ route.post("/", verifyTokenAdmin, async (req, res) => {
   }
 });
 
-/*router.put("/:id", verifyTokenAuthorization, async (req, res) => {
-  if (req.body.password) {
-    req.body.password = CryptoJS.AES.encrypt(
-      req.body.password,
-      process.env.PASS_SEC
-    ).toString();
-  }
+router.put("/:id", verifyTokenAdmin, async (req, res) => {
   try {
-    const updatedUser = await User.findByIdAndDelete(
+    const updateProduct = await Product.findByIdAndDelete(
       req.params.id,
       {
         $set: req.body,
       },
       { new: true }
     );
-    res.status(200).json(updateUser);
+    res.status(200).json(updateProduct);
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
-router.get("/find/:id", verifyTokenAdmin, async (req, res) => {
+router.delete("/:id", async (req, res) => {
   try {
-    const users = await User.find();
-    const { password, ...others } = user._doc;
-    res.status(200).json(users);
+    await Product.findByIdAndDelete(req.params.id);
+    res.status(200).json("Product has been deleted...");
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
-router.get("/", verifyTokenAdmin, async (req, res) => {
-  const query = req.query.new;
+router.get("/find/:id", async (req, res) => {
   try {
-    const users = query
-      ? await User.find().sort({ _id: -1 }).limit(5)
-      : await User.find();
-    res.status(200).json(users);
+    const product = await Product.findById(req.params.id);
+    res.status(200).json(others);
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
-router.get("/stats", verifyTokenAndAdmin, async (req, res) => {
-  const date = new Date();
-  const lastYear = new Date(date.setFullYear(date.getFullYear() - 1));
-
+router.get("/", async (req, res) => {
+  const qNew = req.query.new;
+  const qCategory = req.query.category;
   try {
-    const data = await User.aggregate([
-      { $match: { createAt: { $gte: lastYear } } },
-      {
-        $project: {
-          month: { $month: "$createdAt" },
+    let products;
+    if (qNew) {
+      products = await Product.find(sort({ createAt: -1 }).limit(5));
+    } else if (qCategory) {
+      products = await Product.find({
+        categories: {
+          $in: [qCategory],
         },
-      },
-      {
-        $group: {
-          _id: "$month",
-          total: { $sum: 1 },
-        },
-      },
-    ]);
-    res.status(200).json(data);
+      });
+    } else {
+      products = await products.find();
+    }
+
+    res.status(200).json(users);
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
 module.exports = router;
-*/
