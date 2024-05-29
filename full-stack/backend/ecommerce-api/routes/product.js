@@ -5,7 +5,7 @@ const router = require("express").Router();
 
 // CREATE
 
-route.post("/", verifyTokenAdmin, async (req, res) => {
+router.post("/", verifyTokenAdmin, async (req, res) => {
   const newProduct = new Product(req.body);
 
   try {
