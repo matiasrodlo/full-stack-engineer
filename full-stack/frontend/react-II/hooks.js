@@ -241,6 +241,3 @@ function MusicalRefactored() {
       }
     })
 }
-
-
-
