@@ -138,31 +138,27 @@ export default function Forecast() {
 
 // Rules of Hooks
 
-import React, { useState, useEffect } from 'react';
+iimport React, { useState, useEffect } from 'react';
 import { get } from './mockBackend/fetch';
 
 export default function Shop() {
-  const [categories, setCategories] = useState();
-  if (categories) {
-    const [selectedCategory, setSelectedCategory] = useState();
-    const [items, setItems] = useState({});
-  }
+  const [categories, setCategories] = useState(null);
+  const [selectedCategory, setSelectedCategory] = useState(null);
+  const [items, setItems] = useState({});
 
-  if (!categories) {
-    useEffect(() => {
-      get('/categories').then((response) => {
-        setCategories(response.data);
-      });
+  useEffect(() => {
+    get('/categories').then((response) => {
+      setCategories(response.data);
     });
-  }
+  }, []);
 
-  // if (selectedCategory && !items[selectedCategory]) {
-  //   useEffect(() => {
-  //     get(`/items?category=${selectedCategory}`).then((response) => {
-  //       setItems((prev) => ({ ...prev, [selectedCategory]: response.data }));
-  //     });
-  //   });
-  // }
+  useEffect(() => {
+    if (selectedCategory && !items[selectedCategory]) {
+      get(`/items?category=${selectedCategory}`).then((response) => {
+        setItems((prev) => ({ ...prev, [selectedCategory]: response.data }));
+      });
+    }
+  }, [items, selectedCategory]);
 
   if (!categories) {
     return <p>Loading..</p>;
