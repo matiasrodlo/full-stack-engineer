@@ -1,14 +1,13 @@
 import React from "react";
+const myStyle = {
+  background: "lightblue",
+  color: "darkblue",
+  marginTop: 100,
+  fontSize: 50,
+};
 
 function StyleDemo() {
-  return (
-    <>
-      <h1 style={{ color: "white", background: "black" }}>
-        Style This With Inline Styling
-      </h1>
-      <h1 style={StyleDemo}>Style This With Style Object Variable</h1>
-    </>
-  );
+  return <button style={myStyle}>button</button>;
 }
 
 export default StyleDemo;
