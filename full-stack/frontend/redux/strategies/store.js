@@ -1,10 +1,21 @@
 import { createStore } from "redux";
 import allRecipesData from "./data.js";
 
-export const initialState = {
-  allRecipes: [],
-  favoriteRecipes: [],
-  searchTerm: "",
+// Action Creators
+////////////////////////////////////////
+
+export const addRecipe = (recipe) => {
+  return {
+    type: "favoriteRecipes/addRecipe",
+    payload: recipe,
+  };
+};
+
+export const removeRecipe = (recipe) => {
+  return {
+    type: "favoriteRecipes/removeRecipe",
+    payload: recipe,
+  };
 };
 
 export const setSearchTerm = (term) => {
@@ -27,54 +38,61 @@ export const loadData = () => {
   };
 };
 
-export const addRecipe = (recipe) => {
-  return {
-    type: "favoriteRecipes/addRecipe",
-    payload: recipe,
-  };
-};
+// Reducers
+////////////////////////////////////////
 
-export const removeRecipe = (recipe) => {
-  return {
-    type: "favoriteRecipes/removeRecipe",
-    payload: recipe,
-  };
-};
-
-/* Complete this reducer */
-const recipesReducer = (state = initialState, action) => {
+const initialAllRecipes = [];
+const allRecipesReducer = (allRecipes = initialAllRecipes, action) => {
   switch (action.type) {
     case "allRecipes/loadData":
-      return {
-        ...state,
-        allRecipes: action.payload,
-      };
-    case "searchTerm/clearSearchTerm":
-      return {
-        ...state,
-        searchTerm: "",
-      };
-
-    case "searchTerm/setSearchTerm":
-      return { ...state, searchTerm: action.payload };
-
-    case "favoriteRecipes/addRecipe":
-      return {
-        ...state,
-        favoriteRecipes: [...state.favoriteRecipes, action.payload],
-      };
-
-    case "favoriteRecipes/removeRecipe":
-      return {
-        ...state,
-        favoriteRecipes: state.favoriteRecipes.filter(
-          (element) => element.id !== action.payload.id
-        ),
-      };
-
+      return action.payload;
     default:
-      return state;
+      return allRecipes;
   }
 };
 
-export const store = createStore(recipesReducer);
+const initialSearchTerm = "";
+const searchTermReducer = (searchTerm = initialSearchTerm, action) => {
+  switch (action.type) {
+    case "searchTerm/setSearchTerm":
+      return action.payload;
+    case "searchTerm/clearSearchTerm":
+      return "";
+    default:
+      return searchTerm;
+  }
+};
+
+// Create the initial state for this reducer.
+const initialFavoriteRecipes = [];
+const favoriteRecipesReducer = (
+  favoriteRecipes = initialFavoriteRecipes,
+  action
+) => {
+  switch (action.type) {
+    // Add action.type cases here.
+    case "favoriterecipes/addRecipe":
+      return [...favoriteRecipes, action.payload];
+    case "favoriteRecipes/removeRecipe":
+      return favoriteRecipes.filter(
+        (element) => element.id !== action.payload.id
+      );
+    default:
+      return favoriteRecipes;
+
+    // Don't forget to set the default case!
+  }
+};
+
+const rootReducer = (state = {}, action) => {
+  const nextState = {
+    allRecipes: allRecipesReducer(state.allRecipes, action),
+    searchTerm: searchTermReducer(state.searchTerm, action),
+    // Add in the favoriteRecipes slice using the
+    favoriteRecipes: favoriteRecipesReducer(state.favoriteRecipes, action),
+    // favoriteRecipesReducer function.
+  };
+  return nextState;
+};
+
+export const store = createStore(rootReducer);
