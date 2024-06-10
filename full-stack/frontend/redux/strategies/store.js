@@ -1,4 +1,5 @@
-import { createStore } from "redux";
+// Import combineReducers from redux here.
+import { combineReducers, createStore } from "redux";
 import allRecipesData from "./data.js";
 
 // Action Creators
@@ -63,36 +64,29 @@ const searchTermReducer = (searchTerm = initialSearchTerm, action) => {
   }
 };
 
-// Create the initial state for this reducer.
 const initialFavoriteRecipes = [];
 const favoriteRecipesReducer = (
   favoriteRecipes = initialFavoriteRecipes,
   action
 ) => {
   switch (action.type) {
-    // Add action.type cases here.
-    case "favoriterecipes/addRecipe":
+    case "favoriteRecipes/addRecipe":
       return [...favoriteRecipes, action.payload];
     case "favoriteRecipes/removeRecipe":
-      return favoriteRecipes.filter(
-        (element) => element.id !== action.payload.id
-      );
+      return favoriteRecipes.filter((recipe) => {
+        return recipe.id !== action.payload.id;
+      });
     default:
       return favoriteRecipes;
-
-    // Don't forget to set the default case!
   }
 };
 
-const rootReducer = (state = {}, action) => {
-  const nextState = {
-    allRecipes: allRecipesReducer(state.allRecipes, action),
-    searchTerm: searchTermReducer(state.searchTerm, action),
-    // Add in the favoriteRecipes slice using the
-    favoriteRecipes: favoriteRecipesReducer(state.favoriteRecipes, action),
-    // favoriteRecipesReducer function.
-  };
-  return nextState;
+// Create your `rootReducer` here using combineReducers().
+const reducers = {
+  allRecipes: allRecipesReducer,
+  favoriteRecipes: favoriteRecipesReducer,
+  searchTerm: searchTermReducer,
 };
 
+const rootReducer = combineReducers(reducers);
 export const store = createStore(rootReducer);
