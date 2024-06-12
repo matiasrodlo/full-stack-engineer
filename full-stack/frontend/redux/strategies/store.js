@@ -90,3 +90,23 @@ const reducers = {
 
 const rootReducer = combineReducers(reducers);
 export const store = createStore(rootReducer);
+
+// A file structure for redux
+
+import { createStore, combineReducers } from "redux";
+
+// Import the slice reducers here.
+
+import { favoriteRecipesReducer } from "../features/favoriteRecipes/favoriteRecipesSlice.js";
+import { allRecipesReducer } from "../features/allRecipes/allRecipesSlice.js";
+import { searchTermReducer } from "../features/searchTerm/searchTermSlice.js";
+
+const reducers = {
+  // Add the slice properties here
+  favoriteRecipes: favoriteRecipesReducer,
+  allRecipes: allRecipesReducer,
+  searchTerm: searchTermReducer,
+};
+
+// Declare the store here.
+export const store = createStore(combineReducers(reducers));
