@@ -8,6 +8,16 @@ const messageReducer = (state = "", action) => {
   }
 };
 
-// Paste the logger function here.
+const logger = (storeAPI) => (next) => (action) => {
+  console.log(storeAPI.getState());
+  const nextState = next(action);
+  console.log(nextState);
+  return nextState; // pass the action on to the next middleware in the pipeline
+};
 
-const store = createStore(messageReducer, "");
+const store = createStore(messageReducer, "", applyMiddleware(logger));
+
+store.dispatch({
+  type: "NEW_MESSAGE",
+  payload: "I WROTE A MIDDLEWARE",
+});
