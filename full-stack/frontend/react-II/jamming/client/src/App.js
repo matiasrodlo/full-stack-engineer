@@ -16,18 +16,46 @@ const CLIENT_SECRET = "XXXXXXXXXXXXXXXXXXXXXXXXXXXX";
 
 function App() {
   const [searchInput, setSearchInput] = useState("");
+  const [accessToken, setAccessToken] = useState("");
 
   useEffect(() => {
     // API Access Token
-    var authparamenters = {
+    var authParamenters = {
       method: "POST",
       headers: {
         "Content-type": "application/x-www-form-urlencoded",
       },
-      body: "grant_type=client_credentials",
+      body:
+        "grant_type=client_credentials&client_id=" +
+        CLIENT_ID +
+        "&client_secret=" +
+        CLIENT_SECRET,
     };
-    fetch("https://accounts.spotify.com/api/token");
+    fetch("https://accounts.spotify.com/api/token", authParamenters)
+      .then((result) => result.json())
+      .then((data) => console.log(data.access_token));
   }, []);
+
+  // search
+
+  async function search() {
+    console.log("Search for " + searchInput); // Taylor Swift
+
+    //Get request using  Artist ID
+    var artistParameters = {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: "Bearer " + accessToken,
+      },
+    };
+    var artistID = await fetch(
+      "https://api.spotify.com/v1/search?q=" + searchInput + "&type=artist",
+      artistParameters
+    )
+      .then((response) => response.json())
+      .then((data) => console.log(data));
+  }
 
   return (
     <div className="App">
@@ -38,18 +66,12 @@ function App() {
             type="input"
             onKeyPress={(event) => {
               if (event.key == "Enter") {
-                console.log("Pressed enter");
+                search();
               }
             }}
             onchange={(event) => setSearchInput(event.target.value)}
           />
-          <Button
-            onClick={() => {
-              console.log("Clicked Button");
-            }}
-          >
-            search
-          </Button>
+          <Button onClick={search}>Search</Button>
         </InputGroup>
       </Container>
       <Container>
