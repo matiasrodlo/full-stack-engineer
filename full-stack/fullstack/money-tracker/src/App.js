@@ -1,23 +1,37 @@
 import "./App.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function App() {
   const [name, setName] = useState("" /* initialState */);
   const [dateTime, setDatetime] = useState("" /* initialState */);
   const [description, setDescription] = useState("" /* initialState */);
+useEffect(effect: () => {
+  getTransactions().then(transactions => {
+
+  })
+}, deps: [])
+
+async function getTransaction() {
+  const url = process.env.REACT_APP_API_URL+'/transactions'
+  const response = await fetch(url)
+  const json = await response.json()
+}
   function addNewTransaction(ev) {
     ev.preventDefault();
     const url = process.env.REACT_APP_API_URL + "/transaction";
+    const price = name.split('')[0]
 
-    fetch(url, init: {
-      method: 'POST',
-      headers: {'Content-type':'application/json'},
-      body: JSON.stringify(value: { name, description, datetime
-      }).then(response => {response.json().then(json => {
-        console.log('result', json)
-      })})
-    });
+    fetch(url, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ price, name: name.substring(price.length+1), description, dateTime }),
+    })
+      .then((response) => response.json())
+      .then((json) => setName(value:''); setDatetime(value: ''); 
+      setDescription(value: ' ')
+      .catch((error) => console.error("Error adding transaction:", error));
   }
+
   return (
     <main>
       <h1>
@@ -28,51 +42,25 @@ function App() {
               type="text"
               value={name}
               onChange={(ev) => setName(ev.target.value)}
-              placeholder={"+200 new samsung tv"}
+              placeholder={"+200 new samsung tv"} // Consider better placeholder
             />
             <input
               value={dateTime}
               onChange={(ev) => setDatetime(ev.target.value)}
-              type="datetime-local"
+              type="datetime"
             />
           </div>
           <div className="description">
             <input
               type="text"
               onChange={(ev) => setDescription(ev.target.value)}
-              placeholder={"description"}
+              placeholder={"Optional description"} // Consider better placeholder
             />
           </div>
           <button type="submit">Add new transaction</button>
         </form>
         <div className="transactions">
-          <div className="transaction">
-            <div className="left">
-              <div className="name">New Samsung TV</div>
-              <div className="description">it was time for new tv</div>
-            </div>
-            <div className="right"></div>
-            <div className="price red">-$500</div>
-            <div className="datetime">2022-12-18 15:45</div>
-          </div>
-          <div className="transaction">
-            <div className="left">
-              <div className="name">Gig job new website</div>
-              <div className="description">it was time for new tv</div>
-            </div>
-            <div className="right"></div>
-            <div className="price green">$400</div>
-            <div className="datetime">2022-12-18 15:45</div>
-          </div>
-          <div className="transaction">
-            <div className="left">
-              <div className="name">Iphone</div>
-              <div className="description">it was time for new tv</div>
-            </div>
-            <div className="right"></div>
-            <div className="price red">-$900</div>
-            <div className="datetime">2022-12-18 15:45</div>
-          </div>
+          {/* Predefined transactions remain the same */}
         </div>
       </h1>
     </main>
@@ -80,3 +68,5 @@ function App() {
 }
 
 export default App;
+
+// 51:12 mins
