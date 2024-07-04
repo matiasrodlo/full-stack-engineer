@@ -68,5 +68,3 @@ async function getTransaction() {
 }
 
 export default App;
-
-// 51:12 mins
