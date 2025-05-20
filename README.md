@@ -71,14 +71,6 @@ This repository contains a comprehensive curriculum for becoming a Full-Stack En
 
 ## Front-End Development
 
-### 1. Welcome to the Full-Stack Engineer Path
-
-Welcome to the Full-Stack Engineer Career Path!
-
-### 2. Overview of Web Development
-
-Get an overview of the field of web development to understand what you'll be studying.
-
 ### 3. Fundamentals of HTML
 
 Learn to build a structure for a website using HTML.
@@ -280,5 +272,3 @@ Review some key technical interview topics as well as soft skills which employer
 ### 50. Portfolio Project: Open-Ended PERN App
 
 Build a PERN app of your choosing and deploy it to Heroku.
-
-### 51. Next Steps in Your Full-Stack Engineer Journey
