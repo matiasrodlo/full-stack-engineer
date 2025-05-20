@@ -1,4 +1,4 @@
-# Full-Stack Engineer Career Path - Personal Projects
+# Full-Stack Engineer Career Path
 
 ## Overview
 
