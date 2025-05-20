@@ -2,14 +2,72 @@
 
 ## Overview
 
-Learn to build web applications from start to finish. This path will start with the front-end, move to the back-end, then connect the two.
+This repository contains a comprehensive curriculum for becoming a Full-Stack Engineer. The path is designed to take you from the basics of web development through to building complete, production-ready applications. You'll learn both front-end and back-end technologies, with a focus on modern web development practices and tools.
 
-## Syllabus
+## Learning Path
 
-- **51 units**
-- **162 lessons**
-- **97 projects**
-- **141 quizzes**
+- **51 units** of structured learning
+- **162 lessons** covering essential concepts
+- **97 hands-on projects** for practical experience
+- **141 quizzes** to test your knowledge
+
+## Project Structure
+
+```
+.
+├── backend/     # Server-side development, APIs, databases, and server management
+├── frontend/    # Client-side development, UI/UX, and browser technologies
+├── foundation/  # Core web technologies, programming fundamentals, and best practices
+├── fullstack/   # Complete applications combining frontend and backend technologies
+├── interactive/ # Hands-on coding challenges and practice exercises
+└── interview/   # Technical interview preparation and coding challenges
+```
+
+## Directory Contents
+
+### Backend
+- Server-side programming with Node.js and Express
+- Database design and management
+- API development and integration
+- Authentication and security
+- Server deployment and maintenance
+
+### Frontend
+- HTML5, CSS3, and modern JavaScript
+- React and component-based architecture
+- State management and data flow
+- Responsive design and accessibility
+- Frontend testing and optimization
+
+### Foundation
+- Web development fundamentals
+- Programming concepts and patterns
+- Version control with Git
+- Development tools and workflows
+- Best practices and coding standards
+
+### Fullstack
+- Complete web application development
+- Frontend-backend integration
+- Database integration
+- Authentication and authorization
+- Deployment and DevOps
+
+### Interactive
+- Coding challenges and exercises
+- Problem-solving practice
+- Algorithm implementation
+- Data structure practice
+- Real-world scenario simulations
+
+### Interview
+- Technical interview preparation
+- Coding challenge solutions
+- System design exercises
+- Problem-solving strategies
+- Interview best practices
+
+## Curriculum
 
 ## Front-End Development
 
@@ -19,7 +77,7 @@ Welcome to the Full-Stack Engineer Career Path!
 
 ### 2. Overview of Web Development
 
-Get an overview of the field of web development to understand what you’ll be studying.
+Get an overview of the field of web development to understand what you'll be studying.
 
 ### 3. Fundamentals of HTML
 
@@ -99,7 +157,7 @@ Dive further into React and learn about props, state, hooks as well as testing w
 
 ### 22. Redux
 
-Learn how to manage React application’s states with Redux.
+Learn how to manage React application's states with Redux.
 
 ### 23. Git and GitHub, Part II
 
@@ -224,5 +282,3 @@ Review some key technical interview topics as well as soft skills which employer
 Build a PERN app of your choosing and deploy it to Heroku.
 
 ### 51. Next Steps in Your Full-Stack Engineer Journey
-
-Complete the final Unit the Full-Stack Career Path.
